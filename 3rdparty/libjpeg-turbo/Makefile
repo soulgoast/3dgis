@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/cmake-3.13/bin/cmake
+CMAKE_COMMAND = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/cmake-3.13/bin/cmake -E remove -f
+RM = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/opencv-master
+CMAKE_SOURCE_DIR = /home/opencv-3.4.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/opencv-master/build
+CMAKE_BINARY_DIR = /home/opencv-3.4.2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,30 +59,30 @@ CMAKE_BINARY_DIR = /home/opencv-master/build
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"java\" \"libs\" \"licenses\" \"python\" \"scripts\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"libs\" \"licenses\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -93,7 +93,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -104,7 +104,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-master/build/CPackSourceConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-3.4.2/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -115,7 +115,7 @@ package_source/fast: package_source
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/cmake-3.13/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -126,19 +126,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/cmake-3.13/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -149,7 +149,7 @@ test/fast: test
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/cmake-3.13/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -159,14 +159,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles /home/opencv-master/build/3rdparty/libjpeg-turbo/CMakeFiles/progress.marks
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles /home/opencv-3.4.2/build/3rdparty/libjpeg-turbo/CMakeFiles/progress.marks
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/clean
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/rule:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/rule
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/rule
 .PHONY : 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ libjpeg-turbo: 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/rule
 
 # fast build rule for target.
 libjpeg-turbo/fast:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build
 .PHONY : libjpeg-turbo/fast
 
 src/jaricom.o: src/jaricom.c.o
@@ -210,7 +210,7 @@ src/jaricom.o: src/jaricom.c.o
 
 # target to build an object file
 src/jaricom.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.o
 .PHONY : src/jaricom.c.o
 
 src/jaricom.i: src/jaricom.c.i
@@ -219,7 +219,7 @@ src/jaricom.i: src/jaricom.c.i
 
 # target to preprocess a source file
 src/jaricom.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.i
 .PHONY : src/jaricom.c.i
 
 src/jaricom.s: src/jaricom.c.s
@@ -228,7 +228,7 @@ src/jaricom.s: src/jaricom.c.s
 
 # target to generate assembly for a file
 src/jaricom.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jaricom.c.s
 .PHONY : src/jaricom.c.s
 
 src/jcapimin.o: src/jcapimin.c.o
@@ -237,7 +237,7 @@ src/jcapimin.o: src/jcapimin.c.o
 
 # target to build an object file
 src/jcapimin.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.o
 .PHONY : src/jcapimin.c.o
 
 src/jcapimin.i: src/jcapimin.c.i
@@ -246,7 +246,7 @@ src/jcapimin.i: src/jcapimin.c.i
 
 # target to preprocess a source file
 src/jcapimin.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.i
 .PHONY : src/jcapimin.c.i
 
 src/jcapimin.s: src/jcapimin.c.s
@@ -255,7 +255,7 @@ src/jcapimin.s: src/jcapimin.c.s
 
 # target to generate assembly for a file
 src/jcapimin.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapimin.c.s
 .PHONY : src/jcapimin.c.s
 
 src/jcapistd.o: src/jcapistd.c.o
@@ -264,7 +264,7 @@ src/jcapistd.o: src/jcapistd.c.o
 
 # target to build an object file
 src/jcapistd.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.o
 .PHONY : src/jcapistd.c.o
 
 src/jcapistd.i: src/jcapistd.c.i
@@ -273,7 +273,7 @@ src/jcapistd.i: src/jcapistd.c.i
 
 # target to preprocess a source file
 src/jcapistd.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.i
 .PHONY : src/jcapistd.c.i
 
 src/jcapistd.s: src/jcapistd.c.s
@@ -282,7 +282,7 @@ src/jcapistd.s: src/jcapistd.c.s
 
 # target to generate assembly for a file
 src/jcapistd.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcapistd.c.s
 .PHONY : src/jcapistd.c.s
 
 src/jcarith.o: src/jcarith.c.o
@@ -291,7 +291,7 @@ src/jcarith.o: src/jcarith.c.o
 
 # target to build an object file
 src/jcarith.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.o
 .PHONY : src/jcarith.c.o
 
 src/jcarith.i: src/jcarith.c.i
@@ -300,7 +300,7 @@ src/jcarith.i: src/jcarith.c.i
 
 # target to preprocess a source file
 src/jcarith.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.i
 .PHONY : src/jcarith.c.i
 
 src/jcarith.s: src/jcarith.c.s
@@ -309,7 +309,7 @@ src/jcarith.s: src/jcarith.c.s
 
 # target to generate assembly for a file
 src/jcarith.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcarith.c.s
 .PHONY : src/jcarith.c.s
 
 src/jccoefct.o: src/jccoefct.c.o
@@ -318,7 +318,7 @@ src/jccoefct.o: src/jccoefct.c.o
 
 # target to build an object file
 src/jccoefct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.o
 .PHONY : src/jccoefct.c.o
 
 src/jccoefct.i: src/jccoefct.c.i
@@ -327,7 +327,7 @@ src/jccoefct.i: src/jccoefct.c.i
 
 # target to preprocess a source file
 src/jccoefct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.i
 .PHONY : src/jccoefct.c.i
 
 src/jccoefct.s: src/jccoefct.c.s
@@ -336,7 +336,7 @@ src/jccoefct.s: src/jccoefct.c.s
 
 # target to generate assembly for a file
 src/jccoefct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccoefct.c.s
 .PHONY : src/jccoefct.c.s
 
 src/jccolor.o: src/jccolor.c.o
@@ -345,7 +345,7 @@ src/jccolor.o: src/jccolor.c.o
 
 # target to build an object file
 src/jccolor.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.o
 .PHONY : src/jccolor.c.o
 
 src/jccolor.i: src/jccolor.c.i
@@ -354,7 +354,7 @@ src/jccolor.i: src/jccolor.c.i
 
 # target to preprocess a source file
 src/jccolor.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.i
 .PHONY : src/jccolor.c.i
 
 src/jccolor.s: src/jccolor.c.s
@@ -363,7 +363,7 @@ src/jccolor.s: src/jccolor.c.s
 
 # target to generate assembly for a file
 src/jccolor.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jccolor.c.s
 .PHONY : src/jccolor.c.s
 
 src/jcdctmgr.o: src/jcdctmgr.c.o
@@ -372,7 +372,7 @@ src/jcdctmgr.o: src/jcdctmgr.c.o
 
 # target to build an object file
 src/jcdctmgr.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.o
 .PHONY : src/jcdctmgr.c.o
 
 src/jcdctmgr.i: src/jcdctmgr.c.i
@@ -381,7 +381,7 @@ src/jcdctmgr.i: src/jcdctmgr.c.i
 
 # target to preprocess a source file
 src/jcdctmgr.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.i
 .PHONY : src/jcdctmgr.c.i
 
 src/jcdctmgr.s: src/jcdctmgr.c.s
@@ -390,7 +390,7 @@ src/jcdctmgr.s: src/jcdctmgr.c.s
 
 # target to generate assembly for a file
 src/jcdctmgr.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcdctmgr.c.s
 .PHONY : src/jcdctmgr.c.s
 
 src/jchuff.o: src/jchuff.c.o
@@ -399,7 +399,7 @@ src/jchuff.o: src/jchuff.c.o
 
 # target to build an object file
 src/jchuff.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.o
 .PHONY : src/jchuff.c.o
 
 src/jchuff.i: src/jchuff.c.i
@@ -408,7 +408,7 @@ src/jchuff.i: src/jchuff.c.i
 
 # target to preprocess a source file
 src/jchuff.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.i
 .PHONY : src/jchuff.c.i
 
 src/jchuff.s: src/jchuff.c.s
@@ -417,7 +417,7 @@ src/jchuff.s: src/jchuff.c.s
 
 # target to generate assembly for a file
 src/jchuff.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jchuff.c.s
 .PHONY : src/jchuff.c.s
 
 src/jcinit.o: src/jcinit.c.o
@@ -426,7 +426,7 @@ src/jcinit.o: src/jcinit.c.o
 
 # target to build an object file
 src/jcinit.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.o
 .PHONY : src/jcinit.c.o
 
 src/jcinit.i: src/jcinit.c.i
@@ -435,7 +435,7 @@ src/jcinit.i: src/jcinit.c.i
 
 # target to preprocess a source file
 src/jcinit.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.i
 .PHONY : src/jcinit.c.i
 
 src/jcinit.s: src/jcinit.c.s
@@ -444,7 +444,7 @@ src/jcinit.s: src/jcinit.c.s
 
 # target to generate assembly for a file
 src/jcinit.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcinit.c.s
 .PHONY : src/jcinit.c.s
 
 src/jcmainct.o: src/jcmainct.c.o
@@ -453,7 +453,7 @@ src/jcmainct.o: src/jcmainct.c.o
 
 # target to build an object file
 src/jcmainct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.o
 .PHONY : src/jcmainct.c.o
 
 src/jcmainct.i: src/jcmainct.c.i
@@ -462,7 +462,7 @@ src/jcmainct.i: src/jcmainct.c.i
 
 # target to preprocess a source file
 src/jcmainct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.i
 .PHONY : src/jcmainct.c.i
 
 src/jcmainct.s: src/jcmainct.c.s
@@ -471,7 +471,7 @@ src/jcmainct.s: src/jcmainct.c.s
 
 # target to generate assembly for a file
 src/jcmainct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmainct.c.s
 .PHONY : src/jcmainct.c.s
 
 src/jcmarker.o: src/jcmarker.c.o
@@ -480,7 +480,7 @@ src/jcmarker.o: src/jcmarker.c.o
 
 # target to build an object file
 src/jcmarker.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.o
 .PHONY : src/jcmarker.c.o
 
 src/jcmarker.i: src/jcmarker.c.i
@@ -489,7 +489,7 @@ src/jcmarker.i: src/jcmarker.c.i
 
 # target to preprocess a source file
 src/jcmarker.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.i
 .PHONY : src/jcmarker.c.i
 
 src/jcmarker.s: src/jcmarker.c.s
@@ -498,7 +498,7 @@ src/jcmarker.s: src/jcmarker.c.s
 
 # target to generate assembly for a file
 src/jcmarker.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmarker.c.s
 .PHONY : src/jcmarker.c.s
 
 src/jcmaster.o: src/jcmaster.c.o
@@ -507,7 +507,7 @@ src/jcmaster.o: src/jcmaster.c.o
 
 # target to build an object file
 src/jcmaster.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.o
 .PHONY : src/jcmaster.c.o
 
 src/jcmaster.i: src/jcmaster.c.i
@@ -516,7 +516,7 @@ src/jcmaster.i: src/jcmaster.c.i
 
 # target to preprocess a source file
 src/jcmaster.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.i
 .PHONY : src/jcmaster.c.i
 
 src/jcmaster.s: src/jcmaster.c.s
@@ -525,7 +525,7 @@ src/jcmaster.s: src/jcmaster.c.s
 
 # target to generate assembly for a file
 src/jcmaster.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcmaster.c.s
 .PHONY : src/jcmaster.c.s
 
 src/jcomapi.o: src/jcomapi.c.o
@@ -534,7 +534,7 @@ src/jcomapi.o: src/jcomapi.c.o
 
 # target to build an object file
 src/jcomapi.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.o
 .PHONY : src/jcomapi.c.o
 
 src/jcomapi.i: src/jcomapi.c.i
@@ -543,7 +543,7 @@ src/jcomapi.i: src/jcomapi.c.i
 
 # target to preprocess a source file
 src/jcomapi.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.i
 .PHONY : src/jcomapi.c.i
 
 src/jcomapi.s: src/jcomapi.c.s
@@ -552,7 +552,7 @@ src/jcomapi.s: src/jcomapi.c.s
 
 # target to generate assembly for a file
 src/jcomapi.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcomapi.c.s
 .PHONY : src/jcomapi.c.s
 
 src/jcparam.o: src/jcparam.c.o
@@ -561,7 +561,7 @@ src/jcparam.o: src/jcparam.c.o
 
 # target to build an object file
 src/jcparam.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.o
 .PHONY : src/jcparam.c.o
 
 src/jcparam.i: src/jcparam.c.i
@@ -570,7 +570,7 @@ src/jcparam.i: src/jcparam.c.i
 
 # target to preprocess a source file
 src/jcparam.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.i
 .PHONY : src/jcparam.c.i
 
 src/jcparam.s: src/jcparam.c.s
@@ -579,7 +579,7 @@ src/jcparam.s: src/jcparam.c.s
 
 # target to generate assembly for a file
 src/jcparam.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcparam.c.s
 .PHONY : src/jcparam.c.s
 
 src/jcphuff.o: src/jcphuff.c.o
@@ -588,7 +588,7 @@ src/jcphuff.o: src/jcphuff.c.o
 
 # target to build an object file
 src/jcphuff.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.o
 .PHONY : src/jcphuff.c.o
 
 src/jcphuff.i: src/jcphuff.c.i
@@ -597,7 +597,7 @@ src/jcphuff.i: src/jcphuff.c.i
 
 # target to preprocess a source file
 src/jcphuff.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.i
 .PHONY : src/jcphuff.c.i
 
 src/jcphuff.s: src/jcphuff.c.s
@@ -606,7 +606,7 @@ src/jcphuff.s: src/jcphuff.c.s
 
 # target to generate assembly for a file
 src/jcphuff.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcphuff.c.s
 .PHONY : src/jcphuff.c.s
 
 src/jcprepct.o: src/jcprepct.c.o
@@ -615,7 +615,7 @@ src/jcprepct.o: src/jcprepct.c.o
 
 # target to build an object file
 src/jcprepct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.o
 .PHONY : src/jcprepct.c.o
 
 src/jcprepct.i: src/jcprepct.c.i
@@ -624,7 +624,7 @@ src/jcprepct.i: src/jcprepct.c.i
 
 # target to preprocess a source file
 src/jcprepct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.i
 .PHONY : src/jcprepct.c.i
 
 src/jcprepct.s: src/jcprepct.c.s
@@ -633,7 +633,7 @@ src/jcprepct.s: src/jcprepct.c.s
 
 # target to generate assembly for a file
 src/jcprepct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcprepct.c.s
 .PHONY : src/jcprepct.c.s
 
 src/jcsample.o: src/jcsample.c.o
@@ -642,7 +642,7 @@ src/jcsample.o: src/jcsample.c.o
 
 # target to build an object file
 src/jcsample.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.o
 .PHONY : src/jcsample.c.o
 
 src/jcsample.i: src/jcsample.c.i
@@ -651,7 +651,7 @@ src/jcsample.i: src/jcsample.c.i
 
 # target to preprocess a source file
 src/jcsample.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.i
 .PHONY : src/jcsample.c.i
 
 src/jcsample.s: src/jcsample.c.s
@@ -660,7 +660,7 @@ src/jcsample.s: src/jcsample.c.s
 
 # target to generate assembly for a file
 src/jcsample.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jcsample.c.s
 .PHONY : src/jcsample.c.s
 
 src/jctrans.o: src/jctrans.c.o
@@ -669,7 +669,7 @@ src/jctrans.o: src/jctrans.c.o
 
 # target to build an object file
 src/jctrans.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.o
 .PHONY : src/jctrans.c.o
 
 src/jctrans.i: src/jctrans.c.i
@@ -678,7 +678,7 @@ src/jctrans.i: src/jctrans.c.i
 
 # target to preprocess a source file
 src/jctrans.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.i
 .PHONY : src/jctrans.c.i
 
 src/jctrans.s: src/jctrans.c.s
@@ -687,7 +687,7 @@ src/jctrans.s: src/jctrans.c.s
 
 # target to generate assembly for a file
 src/jctrans.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jctrans.c.s
 .PHONY : src/jctrans.c.s
 
 src/jdapimin.o: src/jdapimin.c.o
@@ -696,7 +696,7 @@ src/jdapimin.o: src/jdapimin.c.o
 
 # target to build an object file
 src/jdapimin.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.o
 .PHONY : src/jdapimin.c.o
 
 src/jdapimin.i: src/jdapimin.c.i
@@ -705,7 +705,7 @@ src/jdapimin.i: src/jdapimin.c.i
 
 # target to preprocess a source file
 src/jdapimin.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.i
 .PHONY : src/jdapimin.c.i
 
 src/jdapimin.s: src/jdapimin.c.s
@@ -714,7 +714,7 @@ src/jdapimin.s: src/jdapimin.c.s
 
 # target to generate assembly for a file
 src/jdapimin.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapimin.c.s
 .PHONY : src/jdapimin.c.s
 
 src/jdapistd.o: src/jdapistd.c.o
@@ -723,7 +723,7 @@ src/jdapistd.o: src/jdapistd.c.o
 
 # target to build an object file
 src/jdapistd.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.o
 .PHONY : src/jdapistd.c.o
 
 src/jdapistd.i: src/jdapistd.c.i
@@ -732,7 +732,7 @@ src/jdapistd.i: src/jdapistd.c.i
 
 # target to preprocess a source file
 src/jdapistd.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.i
 .PHONY : src/jdapistd.c.i
 
 src/jdapistd.s: src/jdapistd.c.s
@@ -741,7 +741,7 @@ src/jdapistd.s: src/jdapistd.c.s
 
 # target to generate assembly for a file
 src/jdapistd.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdapistd.c.s
 .PHONY : src/jdapistd.c.s
 
 src/jdarith.o: src/jdarith.c.o
@@ -750,7 +750,7 @@ src/jdarith.o: src/jdarith.c.o
 
 # target to build an object file
 src/jdarith.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.o
 .PHONY : src/jdarith.c.o
 
 src/jdarith.i: src/jdarith.c.i
@@ -759,7 +759,7 @@ src/jdarith.i: src/jdarith.c.i
 
 # target to preprocess a source file
 src/jdarith.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.i
 .PHONY : src/jdarith.c.i
 
 src/jdarith.s: src/jdarith.c.s
@@ -768,7 +768,7 @@ src/jdarith.s: src/jdarith.c.s
 
 # target to generate assembly for a file
 src/jdarith.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdarith.c.s
 .PHONY : src/jdarith.c.s
 
 src/jdatadst.o: src/jdatadst.c.o
@@ -777,7 +777,7 @@ src/jdatadst.o: src/jdatadst.c.o
 
 # target to build an object file
 src/jdatadst.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.o
 .PHONY : src/jdatadst.c.o
 
 src/jdatadst.i: src/jdatadst.c.i
@@ -786,7 +786,7 @@ src/jdatadst.i: src/jdatadst.c.i
 
 # target to preprocess a source file
 src/jdatadst.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.i
 .PHONY : src/jdatadst.c.i
 
 src/jdatadst.s: src/jdatadst.c.s
@@ -795,7 +795,7 @@ src/jdatadst.s: src/jdatadst.c.s
 
 # target to generate assembly for a file
 src/jdatadst.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatadst.c.s
 .PHONY : src/jdatadst.c.s
 
 src/jdatasrc.o: src/jdatasrc.c.o
@@ -804,7 +804,7 @@ src/jdatasrc.o: src/jdatasrc.c.o
 
 # target to build an object file
 src/jdatasrc.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.o
 .PHONY : src/jdatasrc.c.o
 
 src/jdatasrc.i: src/jdatasrc.c.i
@@ -813,7 +813,7 @@ src/jdatasrc.i: src/jdatasrc.c.i
 
 # target to preprocess a source file
 src/jdatasrc.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.i
 .PHONY : src/jdatasrc.c.i
 
 src/jdatasrc.s: src/jdatasrc.c.s
@@ -822,7 +822,7 @@ src/jdatasrc.s: src/jdatasrc.c.s
 
 # target to generate assembly for a file
 src/jdatasrc.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdatasrc.c.s
 .PHONY : src/jdatasrc.c.s
 
 src/jdcoefct.o: src/jdcoefct.c.o
@@ -831,7 +831,7 @@ src/jdcoefct.o: src/jdcoefct.c.o
 
 # target to build an object file
 src/jdcoefct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.o
 .PHONY : src/jdcoefct.c.o
 
 src/jdcoefct.i: src/jdcoefct.c.i
@@ -840,7 +840,7 @@ src/jdcoefct.i: src/jdcoefct.c.i
 
 # target to preprocess a source file
 src/jdcoefct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.i
 .PHONY : src/jdcoefct.c.i
 
 src/jdcoefct.s: src/jdcoefct.c.s
@@ -849,7 +849,7 @@ src/jdcoefct.s: src/jdcoefct.c.s
 
 # target to generate assembly for a file
 src/jdcoefct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcoefct.c.s
 .PHONY : src/jdcoefct.c.s
 
 src/jdcolor.o: src/jdcolor.c.o
@@ -858,7 +858,7 @@ src/jdcolor.o: src/jdcolor.c.o
 
 # target to build an object file
 src/jdcolor.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.o
 .PHONY : src/jdcolor.c.o
 
 src/jdcolor.i: src/jdcolor.c.i
@@ -867,7 +867,7 @@ src/jdcolor.i: src/jdcolor.c.i
 
 # target to preprocess a source file
 src/jdcolor.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.i
 .PHONY : src/jdcolor.c.i
 
 src/jdcolor.s: src/jdcolor.c.s
@@ -876,7 +876,7 @@ src/jdcolor.s: src/jdcolor.c.s
 
 # target to generate assembly for a file
 src/jdcolor.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdcolor.c.s
 .PHONY : src/jdcolor.c.s
 
 src/jddctmgr.o: src/jddctmgr.c.o
@@ -885,7 +885,7 @@ src/jddctmgr.o: src/jddctmgr.c.o
 
 # target to build an object file
 src/jddctmgr.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.o
 .PHONY : src/jddctmgr.c.o
 
 src/jddctmgr.i: src/jddctmgr.c.i
@@ -894,7 +894,7 @@ src/jddctmgr.i: src/jddctmgr.c.i
 
 # target to preprocess a source file
 src/jddctmgr.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.i
 .PHONY : src/jddctmgr.c.i
 
 src/jddctmgr.s: src/jddctmgr.c.s
@@ -903,7 +903,7 @@ src/jddctmgr.s: src/jddctmgr.c.s
 
 # target to generate assembly for a file
 src/jddctmgr.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jddctmgr.c.s
 .PHONY : src/jddctmgr.c.s
 
 src/jdhuff.o: src/jdhuff.c.o
@@ -912,7 +912,7 @@ src/jdhuff.o: src/jdhuff.c.o
 
 # target to build an object file
 src/jdhuff.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.o
 .PHONY : src/jdhuff.c.o
 
 src/jdhuff.i: src/jdhuff.c.i
@@ -921,7 +921,7 @@ src/jdhuff.i: src/jdhuff.c.i
 
 # target to preprocess a source file
 src/jdhuff.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.i
 .PHONY : src/jdhuff.c.i
 
 src/jdhuff.s: src/jdhuff.c.s
@@ -930,7 +930,7 @@ src/jdhuff.s: src/jdhuff.c.s
 
 # target to generate assembly for a file
 src/jdhuff.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdhuff.c.s
 .PHONY : src/jdhuff.c.s
 
 src/jdinput.o: src/jdinput.c.o
@@ -939,7 +939,7 @@ src/jdinput.o: src/jdinput.c.o
 
 # target to build an object file
 src/jdinput.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.o
 .PHONY : src/jdinput.c.o
 
 src/jdinput.i: src/jdinput.c.i
@@ -948,7 +948,7 @@ src/jdinput.i: src/jdinput.c.i
 
 # target to preprocess a source file
 src/jdinput.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.i
 .PHONY : src/jdinput.c.i
 
 src/jdinput.s: src/jdinput.c.s
@@ -957,7 +957,7 @@ src/jdinput.s: src/jdinput.c.s
 
 # target to generate assembly for a file
 src/jdinput.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdinput.c.s
 .PHONY : src/jdinput.c.s
 
 src/jdmainct.o: src/jdmainct.c.o
@@ -966,7 +966,7 @@ src/jdmainct.o: src/jdmainct.c.o
 
 # target to build an object file
 src/jdmainct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.o
 .PHONY : src/jdmainct.c.o
 
 src/jdmainct.i: src/jdmainct.c.i
@@ -975,7 +975,7 @@ src/jdmainct.i: src/jdmainct.c.i
 
 # target to preprocess a source file
 src/jdmainct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.i
 .PHONY : src/jdmainct.c.i
 
 src/jdmainct.s: src/jdmainct.c.s
@@ -984,7 +984,7 @@ src/jdmainct.s: src/jdmainct.c.s
 
 # target to generate assembly for a file
 src/jdmainct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmainct.c.s
 .PHONY : src/jdmainct.c.s
 
 src/jdmarker.o: src/jdmarker.c.o
@@ -993,7 +993,7 @@ src/jdmarker.o: src/jdmarker.c.o
 
 # target to build an object file
 src/jdmarker.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.o
 .PHONY : src/jdmarker.c.o
 
 src/jdmarker.i: src/jdmarker.c.i
@@ -1002,7 +1002,7 @@ src/jdmarker.i: src/jdmarker.c.i
 
 # target to preprocess a source file
 src/jdmarker.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.i
 .PHONY : src/jdmarker.c.i
 
 src/jdmarker.s: src/jdmarker.c.s
@@ -1011,7 +1011,7 @@ src/jdmarker.s: src/jdmarker.c.s
 
 # target to generate assembly for a file
 src/jdmarker.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmarker.c.s
 .PHONY : src/jdmarker.c.s
 
 src/jdmaster.o: src/jdmaster.c.o
@@ -1020,7 +1020,7 @@ src/jdmaster.o: src/jdmaster.c.o
 
 # target to build an object file
 src/jdmaster.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.o
 .PHONY : src/jdmaster.c.o
 
 src/jdmaster.i: src/jdmaster.c.i
@@ -1029,7 +1029,7 @@ src/jdmaster.i: src/jdmaster.c.i
 
 # target to preprocess a source file
 src/jdmaster.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.i
 .PHONY : src/jdmaster.c.i
 
 src/jdmaster.s: src/jdmaster.c.s
@@ -1038,7 +1038,7 @@ src/jdmaster.s: src/jdmaster.c.s
 
 # target to generate assembly for a file
 src/jdmaster.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmaster.c.s
 .PHONY : src/jdmaster.c.s
 
 src/jdmerge.o: src/jdmerge.c.o
@@ -1047,7 +1047,7 @@ src/jdmerge.o: src/jdmerge.c.o
 
 # target to build an object file
 src/jdmerge.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.o
 .PHONY : src/jdmerge.c.o
 
 src/jdmerge.i: src/jdmerge.c.i
@@ -1056,7 +1056,7 @@ src/jdmerge.i: src/jdmerge.c.i
 
 # target to preprocess a source file
 src/jdmerge.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.i
 .PHONY : src/jdmerge.c.i
 
 src/jdmerge.s: src/jdmerge.c.s
@@ -1065,7 +1065,7 @@ src/jdmerge.s: src/jdmerge.c.s
 
 # target to generate assembly for a file
 src/jdmerge.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdmerge.c.s
 .PHONY : src/jdmerge.c.s
 
 src/jdphuff.o: src/jdphuff.c.o
@@ -1074,7 +1074,7 @@ src/jdphuff.o: src/jdphuff.c.o
 
 # target to build an object file
 src/jdphuff.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.o
 .PHONY : src/jdphuff.c.o
 
 src/jdphuff.i: src/jdphuff.c.i
@@ -1083,7 +1083,7 @@ src/jdphuff.i: src/jdphuff.c.i
 
 # target to preprocess a source file
 src/jdphuff.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.i
 .PHONY : src/jdphuff.c.i
 
 src/jdphuff.s: src/jdphuff.c.s
@@ -1092,7 +1092,7 @@ src/jdphuff.s: src/jdphuff.c.s
 
 # target to generate assembly for a file
 src/jdphuff.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdphuff.c.s
 .PHONY : src/jdphuff.c.s
 
 src/jdpostct.o: src/jdpostct.c.o
@@ -1101,7 +1101,7 @@ src/jdpostct.o: src/jdpostct.c.o
 
 # target to build an object file
 src/jdpostct.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.o
 .PHONY : src/jdpostct.c.o
 
 src/jdpostct.i: src/jdpostct.c.i
@@ -1110,7 +1110,7 @@ src/jdpostct.i: src/jdpostct.c.i
 
 # target to preprocess a source file
 src/jdpostct.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.i
 .PHONY : src/jdpostct.c.i
 
 src/jdpostct.s: src/jdpostct.c.s
@@ -1119,7 +1119,7 @@ src/jdpostct.s: src/jdpostct.c.s
 
 # target to generate assembly for a file
 src/jdpostct.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdpostct.c.s
 .PHONY : src/jdpostct.c.s
 
 src/jdsample.o: src/jdsample.c.o
@@ -1128,7 +1128,7 @@ src/jdsample.o: src/jdsample.c.o
 
 # target to build an object file
 src/jdsample.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.o
 .PHONY : src/jdsample.c.o
 
 src/jdsample.i: src/jdsample.c.i
@@ -1137,7 +1137,7 @@ src/jdsample.i: src/jdsample.c.i
 
 # target to preprocess a source file
 src/jdsample.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.i
 .PHONY : src/jdsample.c.i
 
 src/jdsample.s: src/jdsample.c.s
@@ -1146,7 +1146,7 @@ src/jdsample.s: src/jdsample.c.s
 
 # target to generate assembly for a file
 src/jdsample.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdsample.c.s
 .PHONY : src/jdsample.c.s
 
 src/jdtrans.o: src/jdtrans.c.o
@@ -1155,7 +1155,7 @@ src/jdtrans.o: src/jdtrans.c.o
 
 # target to build an object file
 src/jdtrans.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.o
 .PHONY : src/jdtrans.c.o
 
 src/jdtrans.i: src/jdtrans.c.i
@@ -1164,7 +1164,7 @@ src/jdtrans.i: src/jdtrans.c.i
 
 # target to preprocess a source file
 src/jdtrans.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.i
 .PHONY : src/jdtrans.c.i
 
 src/jdtrans.s: src/jdtrans.c.s
@@ -1173,7 +1173,7 @@ src/jdtrans.s: src/jdtrans.c.s
 
 # target to generate assembly for a file
 src/jdtrans.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jdtrans.c.s
 .PHONY : src/jdtrans.c.s
 
 src/jerror.o: src/jerror.c.o
@@ -1182,7 +1182,7 @@ src/jerror.o: src/jerror.c.o
 
 # target to build an object file
 src/jerror.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.o
 .PHONY : src/jerror.c.o
 
 src/jerror.i: src/jerror.c.i
@@ -1191,7 +1191,7 @@ src/jerror.i: src/jerror.c.i
 
 # target to preprocess a source file
 src/jerror.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.i
 .PHONY : src/jerror.c.i
 
 src/jerror.s: src/jerror.c.s
@@ -1200,7 +1200,7 @@ src/jerror.s: src/jerror.c.s
 
 # target to generate assembly for a file
 src/jerror.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jerror.c.s
 .PHONY : src/jerror.c.s
 
 src/jfdctflt.o: src/jfdctflt.c.o
@@ -1209,7 +1209,7 @@ src/jfdctflt.o: src/jfdctflt.c.o
 
 # target to build an object file
 src/jfdctflt.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.o
 .PHONY : src/jfdctflt.c.o
 
 src/jfdctflt.i: src/jfdctflt.c.i
@@ -1218,7 +1218,7 @@ src/jfdctflt.i: src/jfdctflt.c.i
 
 # target to preprocess a source file
 src/jfdctflt.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.i
 .PHONY : src/jfdctflt.c.i
 
 src/jfdctflt.s: src/jfdctflt.c.s
@@ -1227,7 +1227,7 @@ src/jfdctflt.s: src/jfdctflt.c.s
 
 # target to generate assembly for a file
 src/jfdctflt.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctflt.c.s
 .PHONY : src/jfdctflt.c.s
 
 src/jfdctfst.o: src/jfdctfst.c.o
@@ -1236,7 +1236,7 @@ src/jfdctfst.o: src/jfdctfst.c.o
 
 # target to build an object file
 src/jfdctfst.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.o
 .PHONY : src/jfdctfst.c.o
 
 src/jfdctfst.i: src/jfdctfst.c.i
@@ -1245,7 +1245,7 @@ src/jfdctfst.i: src/jfdctfst.c.i
 
 # target to preprocess a source file
 src/jfdctfst.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.i
 .PHONY : src/jfdctfst.c.i
 
 src/jfdctfst.s: src/jfdctfst.c.s
@@ -1254,7 +1254,7 @@ src/jfdctfst.s: src/jfdctfst.c.s
 
 # target to generate assembly for a file
 src/jfdctfst.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctfst.c.s
 .PHONY : src/jfdctfst.c.s
 
 src/jfdctint.o: src/jfdctint.c.o
@@ -1263,7 +1263,7 @@ src/jfdctint.o: src/jfdctint.c.o
 
 # target to build an object file
 src/jfdctint.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.o
 .PHONY : src/jfdctint.c.o
 
 src/jfdctint.i: src/jfdctint.c.i
@@ -1272,7 +1272,7 @@ src/jfdctint.i: src/jfdctint.c.i
 
 # target to preprocess a source file
 src/jfdctint.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.i
 .PHONY : src/jfdctint.c.i
 
 src/jfdctint.s: src/jfdctint.c.s
@@ -1281,7 +1281,7 @@ src/jfdctint.s: src/jfdctint.c.s
 
 # target to generate assembly for a file
 src/jfdctint.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jfdctint.c.s
 .PHONY : src/jfdctint.c.s
 
 src/jidctflt.o: src/jidctflt.c.o
@@ -1290,7 +1290,7 @@ src/jidctflt.o: src/jidctflt.c.o
 
 # target to build an object file
 src/jidctflt.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.o
 .PHONY : src/jidctflt.c.o
 
 src/jidctflt.i: src/jidctflt.c.i
@@ -1299,7 +1299,7 @@ src/jidctflt.i: src/jidctflt.c.i
 
 # target to preprocess a source file
 src/jidctflt.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.i
 .PHONY : src/jidctflt.c.i
 
 src/jidctflt.s: src/jidctflt.c.s
@@ -1308,7 +1308,7 @@ src/jidctflt.s: src/jidctflt.c.s
 
 # target to generate assembly for a file
 src/jidctflt.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctflt.c.s
 .PHONY : src/jidctflt.c.s
 
 src/jidctfst.o: src/jidctfst.c.o
@@ -1317,7 +1317,7 @@ src/jidctfst.o: src/jidctfst.c.o
 
 # target to build an object file
 src/jidctfst.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.o
 .PHONY : src/jidctfst.c.o
 
 src/jidctfst.i: src/jidctfst.c.i
@@ -1326,7 +1326,7 @@ src/jidctfst.i: src/jidctfst.c.i
 
 # target to preprocess a source file
 src/jidctfst.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.i
 .PHONY : src/jidctfst.c.i
 
 src/jidctfst.s: src/jidctfst.c.s
@@ -1335,7 +1335,7 @@ src/jidctfst.s: src/jidctfst.c.s
 
 # target to generate assembly for a file
 src/jidctfst.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctfst.c.s
 .PHONY : src/jidctfst.c.s
 
 src/jidctint.o: src/jidctint.c.o
@@ -1344,7 +1344,7 @@ src/jidctint.o: src/jidctint.c.o
 
 # target to build an object file
 src/jidctint.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.o
 .PHONY : src/jidctint.c.o
 
 src/jidctint.i: src/jidctint.c.i
@@ -1353,7 +1353,7 @@ src/jidctint.i: src/jidctint.c.i
 
 # target to preprocess a source file
 src/jidctint.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.i
 .PHONY : src/jidctint.c.i
 
 src/jidctint.s: src/jidctint.c.s
@@ -1362,7 +1362,7 @@ src/jidctint.s: src/jidctint.c.s
 
 # target to generate assembly for a file
 src/jidctint.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctint.c.s
 .PHONY : src/jidctint.c.s
 
 src/jidctred.o: src/jidctred.c.o
@@ -1371,7 +1371,7 @@ src/jidctred.o: src/jidctred.c.o
 
 # target to build an object file
 src/jidctred.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.o
 .PHONY : src/jidctred.c.o
 
 src/jidctred.i: src/jidctred.c.i
@@ -1380,7 +1380,7 @@ src/jidctred.i: src/jidctred.c.i
 
 # target to preprocess a source file
 src/jidctred.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.i
 .PHONY : src/jidctred.c.i
 
 src/jidctred.s: src/jidctred.c.s
@@ -1389,7 +1389,7 @@ src/jidctred.s: src/jidctred.c.s
 
 # target to generate assembly for a file
 src/jidctred.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jidctred.c.s
 .PHONY : src/jidctred.c.s
 
 src/jmemmgr.o: src/jmemmgr.c.o
@@ -1398,7 +1398,7 @@ src/jmemmgr.o: src/jmemmgr.c.o
 
 # target to build an object file
 src/jmemmgr.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.o
 .PHONY : src/jmemmgr.c.o
 
 src/jmemmgr.i: src/jmemmgr.c.i
@@ -1407,7 +1407,7 @@ src/jmemmgr.i: src/jmemmgr.c.i
 
 # target to preprocess a source file
 src/jmemmgr.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.i
 .PHONY : src/jmemmgr.c.i
 
 src/jmemmgr.s: src/jmemmgr.c.s
@@ -1416,7 +1416,7 @@ src/jmemmgr.s: src/jmemmgr.c.s
 
 # target to generate assembly for a file
 src/jmemmgr.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemmgr.c.s
 .PHONY : src/jmemmgr.c.s
 
 src/jmemnobs.o: src/jmemnobs.c.o
@@ -1425,7 +1425,7 @@ src/jmemnobs.o: src/jmemnobs.c.o
 
 # target to build an object file
 src/jmemnobs.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.o
 .PHONY : src/jmemnobs.c.o
 
 src/jmemnobs.i: src/jmemnobs.c.i
@@ -1434,7 +1434,7 @@ src/jmemnobs.i: src/jmemnobs.c.i
 
 # target to preprocess a source file
 src/jmemnobs.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.i
 .PHONY : src/jmemnobs.c.i
 
 src/jmemnobs.s: src/jmemnobs.c.s
@@ -1443,7 +1443,7 @@ src/jmemnobs.s: src/jmemnobs.c.s
 
 # target to generate assembly for a file
 src/jmemnobs.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jmemnobs.c.s
 .PHONY : src/jmemnobs.c.s
 
 src/jquant1.o: src/jquant1.c.o
@@ -1452,7 +1452,7 @@ src/jquant1.o: src/jquant1.c.o
 
 # target to build an object file
 src/jquant1.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.o
 .PHONY : src/jquant1.c.o
 
 src/jquant1.i: src/jquant1.c.i
@@ -1461,7 +1461,7 @@ src/jquant1.i: src/jquant1.c.i
 
 # target to preprocess a source file
 src/jquant1.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.i
 .PHONY : src/jquant1.c.i
 
 src/jquant1.s: src/jquant1.c.s
@@ -1470,7 +1470,7 @@ src/jquant1.s: src/jquant1.c.s
 
 # target to generate assembly for a file
 src/jquant1.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant1.c.s
 .PHONY : src/jquant1.c.s
 
 src/jquant2.o: src/jquant2.c.o
@@ -1479,7 +1479,7 @@ src/jquant2.o: src/jquant2.c.o
 
 # target to build an object file
 src/jquant2.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.o
 .PHONY : src/jquant2.c.o
 
 src/jquant2.i: src/jquant2.c.i
@@ -1488,7 +1488,7 @@ src/jquant2.i: src/jquant2.c.i
 
 # target to preprocess a source file
 src/jquant2.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.i
 .PHONY : src/jquant2.c.i
 
 src/jquant2.s: src/jquant2.c.s
@@ -1497,7 +1497,7 @@ src/jquant2.s: src/jquant2.c.s
 
 # target to generate assembly for a file
 src/jquant2.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jquant2.c.s
 .PHONY : src/jquant2.c.s
 
 src/jsimd_none.o: src/jsimd_none.c.o
@@ -1506,7 +1506,7 @@ src/jsimd_none.o: src/jsimd_none.c.o
 
 # target to build an object file
 src/jsimd_none.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.o
 .PHONY : src/jsimd_none.c.o
 
 src/jsimd_none.i: src/jsimd_none.c.i
@@ -1515,7 +1515,7 @@ src/jsimd_none.i: src/jsimd_none.c.i
 
 # target to preprocess a source file
 src/jsimd_none.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.i
 .PHONY : src/jsimd_none.c.i
 
 src/jsimd_none.s: src/jsimd_none.c.s
@@ -1524,7 +1524,7 @@ src/jsimd_none.s: src/jsimd_none.c.s
 
 # target to generate assembly for a file
 src/jsimd_none.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jsimd_none.c.s
 .PHONY : src/jsimd_none.c.s
 
 src/jutils.o: src/jutils.c.o
@@ -1533,7 +1533,7 @@ src/jutils.o: src/jutils.c.o
 
 # target to build an object file
 src/jutils.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.o
 .PHONY : src/jutils.c.o
 
 src/jutils.i: src/jutils.c.i
@@ -1542,7 +1542,7 @@ src/jutils.i: src/jutils.c.i
 
 # target to preprocess a source file
 src/jutils.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.i
 .PHONY : src/jutils.c.i
 
 src/jutils.s: src/jutils.c.s
@@ -1551,7 +1551,7 @@ src/jutils.s: src/jutils.c.s
 
 # target to generate assembly for a file
 src/jutils.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/build.make 3rdparty/libjpeg-turbo/CMakeFiles/libjpeg-turbo.dir/src/jutils.c.s
 .PHONY : src/jutils.c.s
 
 # Help Target
@@ -1731,6 +1731,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

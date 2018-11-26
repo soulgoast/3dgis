@@ -4,16 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/opencv-master/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c" "/home/opencv-master/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o"
-  "/home/opencv-master/3rdparty/ittnotify/src/ittnotify/jitprofiling.c" "/home/opencv-master/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o"
+  "/home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c" "/home/opencv-3.4.2/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o"
+  "/home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/jitprofiling.c" "/home/opencv-3.4.2/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../3rdparty/ittnotify/include"
-  "3rdparty/ippicv/ippicv_lnx/icv/include"
-  "3rdparty/ippicv/ippicv_lnx/iw/include"
+  "3rdparty/ippicv/ippicv_lnx/include"
+  "3rdparty/ippicv/ippiw_lnx/include"
   "."
   )
 

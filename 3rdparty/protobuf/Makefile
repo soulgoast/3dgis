@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/cmake-3.13/bin/cmake
+CMAKE_COMMAND = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/cmake-3.13/bin/cmake -E remove -f
+RM = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/opencv-master
+CMAKE_SOURCE_DIR = /home/opencv-3.4.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/opencv-master/build
+CMAKE_BINARY_DIR = /home/opencv-3.4.2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,30 +59,30 @@ CMAKE_BINARY_DIR = /home/opencv-master/build
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"java\" \"libs\" \"licenses\" \"python\" \"scripts\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"libs\" \"licenses\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -93,7 +93,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -104,7 +104,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-master/build/CPackSourceConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-3.4.2/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -115,19 +115,19 @@ package_source/fast: package_source
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/cmake-3.13/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -138,7 +138,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/cmake-3.13/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -149,7 +149,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/cmake-3.13/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -159,14 +159,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles /home/opencv-master/build/3rdparty/protobuf/CMakeFiles/progress.marks
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles /home/opencv-3.4.2/build/3rdparty/protobuf/CMakeFiles/progress.marks
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/clean
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/rule:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/rule
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/rule
 .PHONY : 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ libprotobuf: 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/rule
 
 # fast build rule for target.
 libprotobuf/fast:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build
 .PHONY : libprotobuf/fast
 
 src/google/protobuf/any.o: src/google/protobuf/any.cc.o
@@ -210,7 +210,7 @@ src/google/protobuf/any.o: src/google/protobuf/any.cc.o
 
 # target to build an object file
 src/google/protobuf/any.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.o
 .PHONY : src/google/protobuf/any.cc.o
 
 src/google/protobuf/any.i: src/google/protobuf/any.cc.i
@@ -219,7 +219,7 @@ src/google/protobuf/any.i: src/google/protobuf/any.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/any.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.i
 .PHONY : src/google/protobuf/any.cc.i
 
 src/google/protobuf/any.s: src/google/protobuf/any.cc.s
@@ -228,7 +228,7 @@ src/google/protobuf/any.s: src/google/protobuf/any.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/any.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.cc.s
 .PHONY : src/google/protobuf/any.cc.s
 
 src/google/protobuf/any.pb.o: src/google/protobuf/any.pb.cc.o
@@ -237,7 +237,7 @@ src/google/protobuf/any.pb.o: src/google/protobuf/any.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/any.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.o
 .PHONY : src/google/protobuf/any.pb.cc.o
 
 src/google/protobuf/any.pb.i: src/google/protobuf/any.pb.cc.i
@@ -246,7 +246,7 @@ src/google/protobuf/any.pb.i: src/google/protobuf/any.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/any.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.i
 .PHONY : src/google/protobuf/any.pb.cc.i
 
 src/google/protobuf/any.pb.s: src/google/protobuf/any.pb.cc.s
@@ -255,7 +255,7 @@ src/google/protobuf/any.pb.s: src/google/protobuf/any.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/any.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/any.pb.cc.s
 .PHONY : src/google/protobuf/any.pb.cc.s
 
 src/google/protobuf/api.pb.o: src/google/protobuf/api.pb.cc.o
@@ -264,7 +264,7 @@ src/google/protobuf/api.pb.o: src/google/protobuf/api.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/api.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.o
 .PHONY : src/google/protobuf/api.pb.cc.o
 
 src/google/protobuf/api.pb.i: src/google/protobuf/api.pb.cc.i
@@ -273,7 +273,7 @@ src/google/protobuf/api.pb.i: src/google/protobuf/api.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/api.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.i
 .PHONY : src/google/protobuf/api.pb.cc.i
 
 src/google/protobuf/api.pb.s: src/google/protobuf/api.pb.cc.s
@@ -282,7 +282,7 @@ src/google/protobuf/api.pb.s: src/google/protobuf/api.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/api.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/api.pb.cc.s
 .PHONY : src/google/protobuf/api.pb.cc.s
 
 src/google/protobuf/arena.o: src/google/protobuf/arena.cc.o
@@ -291,7 +291,7 @@ src/google/protobuf/arena.o: src/google/protobuf/arena.cc.o
 
 # target to build an object file
 src/google/protobuf/arena.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.o
 .PHONY : src/google/protobuf/arena.cc.o
 
 src/google/protobuf/arena.i: src/google/protobuf/arena.cc.i
@@ -300,7 +300,7 @@ src/google/protobuf/arena.i: src/google/protobuf/arena.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/arena.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.i
 .PHONY : src/google/protobuf/arena.cc.i
 
 src/google/protobuf/arena.s: src/google/protobuf/arena.cc.s
@@ -309,7 +309,7 @@ src/google/protobuf/arena.s: src/google/protobuf/arena.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/arena.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.s
 .PHONY : src/google/protobuf/arena.cc.s
 
 src/google/protobuf/arenastring.o: src/google/protobuf/arenastring.cc.o
@@ -318,7 +318,7 @@ src/google/protobuf/arenastring.o: src/google/protobuf/arenastring.cc.o
 
 # target to build an object file
 src/google/protobuf/arenastring.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.o
 .PHONY : src/google/protobuf/arenastring.cc.o
 
 src/google/protobuf/arenastring.i: src/google/protobuf/arenastring.cc.i
@@ -327,7 +327,7 @@ src/google/protobuf/arenastring.i: src/google/protobuf/arenastring.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/arenastring.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.i
 .PHONY : src/google/protobuf/arenastring.cc.i
 
 src/google/protobuf/arenastring.s: src/google/protobuf/arenastring.cc.s
@@ -336,7 +336,7 @@ src/google/protobuf/arenastring.s: src/google/protobuf/arenastring.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/arenastring.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arenastring.cc.s
 .PHONY : src/google/protobuf/arenastring.cc.s
 
 src/google/protobuf/descriptor.o: src/google/protobuf/descriptor.cc.o
@@ -345,7 +345,7 @@ src/google/protobuf/descriptor.o: src/google/protobuf/descriptor.cc.o
 
 # target to build an object file
 src/google/protobuf/descriptor.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.o
 .PHONY : src/google/protobuf/descriptor.cc.o
 
 src/google/protobuf/descriptor.i: src/google/protobuf/descriptor.cc.i
@@ -354,7 +354,7 @@ src/google/protobuf/descriptor.i: src/google/protobuf/descriptor.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/descriptor.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.i
 .PHONY : src/google/protobuf/descriptor.cc.i
 
 src/google/protobuf/descriptor.s: src/google/protobuf/descriptor.cc.s
@@ -363,7 +363,7 @@ src/google/protobuf/descriptor.s: src/google/protobuf/descriptor.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/descriptor.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.cc.s
 .PHONY : src/google/protobuf/descriptor.cc.s
 
 src/google/protobuf/descriptor.pb.o: src/google/protobuf/descriptor.pb.cc.o
@@ -372,7 +372,7 @@ src/google/protobuf/descriptor.pb.o: src/google/protobuf/descriptor.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/descriptor.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.o
 .PHONY : src/google/protobuf/descriptor.pb.cc.o
 
 src/google/protobuf/descriptor.pb.i: src/google/protobuf/descriptor.pb.cc.i
@@ -381,7 +381,7 @@ src/google/protobuf/descriptor.pb.i: src/google/protobuf/descriptor.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/descriptor.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.i
 .PHONY : src/google/protobuf/descriptor.pb.cc.i
 
 src/google/protobuf/descriptor.pb.s: src/google/protobuf/descriptor.pb.cc.s
@@ -390,7 +390,7 @@ src/google/protobuf/descriptor.pb.s: src/google/protobuf/descriptor.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/descriptor.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor.pb.cc.s
 .PHONY : src/google/protobuf/descriptor.pb.cc.s
 
 src/google/protobuf/descriptor_database.o: src/google/protobuf/descriptor_database.cc.o
@@ -399,7 +399,7 @@ src/google/protobuf/descriptor_database.o: src/google/protobuf/descriptor_databa
 
 # target to build an object file
 src/google/protobuf/descriptor_database.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.o
 .PHONY : src/google/protobuf/descriptor_database.cc.o
 
 src/google/protobuf/descriptor_database.i: src/google/protobuf/descriptor_database.cc.i
@@ -408,7 +408,7 @@ src/google/protobuf/descriptor_database.i: src/google/protobuf/descriptor_databa
 
 # target to preprocess a source file
 src/google/protobuf/descriptor_database.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.i
 .PHONY : src/google/protobuf/descriptor_database.cc.i
 
 src/google/protobuf/descriptor_database.s: src/google/protobuf/descriptor_database.cc.s
@@ -417,7 +417,7 @@ src/google/protobuf/descriptor_database.s: src/google/protobuf/descriptor_databa
 
 # target to generate assembly for a file
 src/google/protobuf/descriptor_database.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/descriptor_database.cc.s
 .PHONY : src/google/protobuf/descriptor_database.cc.s
 
 src/google/protobuf/duration.pb.o: src/google/protobuf/duration.pb.cc.o
@@ -426,7 +426,7 @@ src/google/protobuf/duration.pb.o: src/google/protobuf/duration.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/duration.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.o
 .PHONY : src/google/protobuf/duration.pb.cc.o
 
 src/google/protobuf/duration.pb.i: src/google/protobuf/duration.pb.cc.i
@@ -435,7 +435,7 @@ src/google/protobuf/duration.pb.i: src/google/protobuf/duration.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/duration.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.i
 .PHONY : src/google/protobuf/duration.pb.cc.i
 
 src/google/protobuf/duration.pb.s: src/google/protobuf/duration.pb.cc.s
@@ -444,7 +444,7 @@ src/google/protobuf/duration.pb.s: src/google/protobuf/duration.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/duration.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/duration.pb.cc.s
 .PHONY : src/google/protobuf/duration.pb.cc.s
 
 src/google/protobuf/dynamic_message.o: src/google/protobuf/dynamic_message.cc.o
@@ -453,7 +453,7 @@ src/google/protobuf/dynamic_message.o: src/google/protobuf/dynamic_message.cc.o
 
 # target to build an object file
 src/google/protobuf/dynamic_message.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.o
 .PHONY : src/google/protobuf/dynamic_message.cc.o
 
 src/google/protobuf/dynamic_message.i: src/google/protobuf/dynamic_message.cc.i
@@ -462,7 +462,7 @@ src/google/protobuf/dynamic_message.i: src/google/protobuf/dynamic_message.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/dynamic_message.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.i
 .PHONY : src/google/protobuf/dynamic_message.cc.i
 
 src/google/protobuf/dynamic_message.s: src/google/protobuf/dynamic_message.cc.s
@@ -471,7 +471,7 @@ src/google/protobuf/dynamic_message.s: src/google/protobuf/dynamic_message.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/dynamic_message.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/dynamic_message.cc.s
 .PHONY : src/google/protobuf/dynamic_message.cc.s
 
 src/google/protobuf/empty.pb.o: src/google/protobuf/empty.pb.cc.o
@@ -480,7 +480,7 @@ src/google/protobuf/empty.pb.o: src/google/protobuf/empty.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/empty.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.o
 .PHONY : src/google/protobuf/empty.pb.cc.o
 
 src/google/protobuf/empty.pb.i: src/google/protobuf/empty.pb.cc.i
@@ -489,7 +489,7 @@ src/google/protobuf/empty.pb.i: src/google/protobuf/empty.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/empty.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.i
 .PHONY : src/google/protobuf/empty.pb.cc.i
 
 src/google/protobuf/empty.pb.s: src/google/protobuf/empty.pb.cc.s
@@ -498,7 +498,7 @@ src/google/protobuf/empty.pb.s: src/google/protobuf/empty.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/empty.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/empty.pb.cc.s
 .PHONY : src/google/protobuf/empty.pb.cc.s
 
 src/google/protobuf/extension_set.o: src/google/protobuf/extension_set.cc.o
@@ -507,7 +507,7 @@ src/google/protobuf/extension_set.o: src/google/protobuf/extension_set.cc.o
 
 # target to build an object file
 src/google/protobuf/extension_set.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.o
 .PHONY : src/google/protobuf/extension_set.cc.o
 
 src/google/protobuf/extension_set.i: src/google/protobuf/extension_set.cc.i
@@ -516,7 +516,7 @@ src/google/protobuf/extension_set.i: src/google/protobuf/extension_set.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/extension_set.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.i
 .PHONY : src/google/protobuf/extension_set.cc.i
 
 src/google/protobuf/extension_set.s: src/google/protobuf/extension_set.cc.s
@@ -525,7 +525,7 @@ src/google/protobuf/extension_set.s: src/google/protobuf/extension_set.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/extension_set.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set.cc.s
 .PHONY : src/google/protobuf/extension_set.cc.s
 
 src/google/protobuf/extension_set_heavy.o: src/google/protobuf/extension_set_heavy.cc.o
@@ -534,7 +534,7 @@ src/google/protobuf/extension_set_heavy.o: src/google/protobuf/extension_set_hea
 
 # target to build an object file
 src/google/protobuf/extension_set_heavy.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.o
 .PHONY : src/google/protobuf/extension_set_heavy.cc.o
 
 src/google/protobuf/extension_set_heavy.i: src/google/protobuf/extension_set_heavy.cc.i
@@ -543,7 +543,7 @@ src/google/protobuf/extension_set_heavy.i: src/google/protobuf/extension_set_hea
 
 # target to preprocess a source file
 src/google/protobuf/extension_set_heavy.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.i
 .PHONY : src/google/protobuf/extension_set_heavy.cc.i
 
 src/google/protobuf/extension_set_heavy.s: src/google/protobuf/extension_set_heavy.cc.s
@@ -552,7 +552,7 @@ src/google/protobuf/extension_set_heavy.s: src/google/protobuf/extension_set_hea
 
 # target to generate assembly for a file
 src/google/protobuf/extension_set_heavy.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/extension_set_heavy.cc.s
 .PHONY : src/google/protobuf/extension_set_heavy.cc.s
 
 src/google/protobuf/field_mask.pb.o: src/google/protobuf/field_mask.pb.cc.o
@@ -561,7 +561,7 @@ src/google/protobuf/field_mask.pb.o: src/google/protobuf/field_mask.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/field_mask.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.o
 .PHONY : src/google/protobuf/field_mask.pb.cc.o
 
 src/google/protobuf/field_mask.pb.i: src/google/protobuf/field_mask.pb.cc.i
@@ -570,7 +570,7 @@ src/google/protobuf/field_mask.pb.i: src/google/protobuf/field_mask.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/field_mask.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.i
 .PHONY : src/google/protobuf/field_mask.pb.cc.i
 
 src/google/protobuf/field_mask.pb.s: src/google/protobuf/field_mask.pb.cc.s
@@ -579,7 +579,7 @@ src/google/protobuf/field_mask.pb.s: src/google/protobuf/field_mask.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/field_mask.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/field_mask.pb.cc.s
 .PHONY : src/google/protobuf/field_mask.pb.cc.s
 
 src/google/protobuf/generated_message_reflection.o: src/google/protobuf/generated_message_reflection.cc.o
@@ -588,7 +588,7 @@ src/google/protobuf/generated_message_reflection.o: src/google/protobuf/generate
 
 # target to build an object file
 src/google/protobuf/generated_message_reflection.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.o
 .PHONY : src/google/protobuf/generated_message_reflection.cc.o
 
 src/google/protobuf/generated_message_reflection.i: src/google/protobuf/generated_message_reflection.cc.i
@@ -597,7 +597,7 @@ src/google/protobuf/generated_message_reflection.i: src/google/protobuf/generate
 
 # target to preprocess a source file
 src/google/protobuf/generated_message_reflection.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.i
 .PHONY : src/google/protobuf/generated_message_reflection.cc.i
 
 src/google/protobuf/generated_message_reflection.s: src/google/protobuf/generated_message_reflection.cc.s
@@ -606,7 +606,7 @@ src/google/protobuf/generated_message_reflection.s: src/google/protobuf/generate
 
 # target to generate assembly for a file
 src/google/protobuf/generated_message_reflection.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_reflection.cc.s
 .PHONY : src/google/protobuf/generated_message_reflection.cc.s
 
 src/google/protobuf/generated_message_table_driven.o: src/google/protobuf/generated_message_table_driven.cc.o
@@ -615,7 +615,7 @@ src/google/protobuf/generated_message_table_driven.o: src/google/protobuf/genera
 
 # target to build an object file
 src/google/protobuf/generated_message_table_driven.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.o
 .PHONY : src/google/protobuf/generated_message_table_driven.cc.o
 
 src/google/protobuf/generated_message_table_driven.i: src/google/protobuf/generated_message_table_driven.cc.i
@@ -624,7 +624,7 @@ src/google/protobuf/generated_message_table_driven.i: src/google/protobuf/genera
 
 # target to preprocess a source file
 src/google/protobuf/generated_message_table_driven.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.i
 .PHONY : src/google/protobuf/generated_message_table_driven.cc.i
 
 src/google/protobuf/generated_message_table_driven.s: src/google/protobuf/generated_message_table_driven.cc.s
@@ -633,7 +633,7 @@ src/google/protobuf/generated_message_table_driven.s: src/google/protobuf/genera
 
 # target to generate assembly for a file
 src/google/protobuf/generated_message_table_driven.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven.cc.s
 .PHONY : src/google/protobuf/generated_message_table_driven.cc.s
 
 src/google/protobuf/generated_message_table_driven_lite.o: src/google/protobuf/generated_message_table_driven_lite.cc.o
@@ -642,7 +642,7 @@ src/google/protobuf/generated_message_table_driven_lite.o: src/google/protobuf/g
 
 # target to build an object file
 src/google/protobuf/generated_message_table_driven_lite.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.o
 .PHONY : src/google/protobuf/generated_message_table_driven_lite.cc.o
 
 src/google/protobuf/generated_message_table_driven_lite.i: src/google/protobuf/generated_message_table_driven_lite.cc.i
@@ -651,7 +651,7 @@ src/google/protobuf/generated_message_table_driven_lite.i: src/google/protobuf/g
 
 # target to preprocess a source file
 src/google/protobuf/generated_message_table_driven_lite.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.i
 .PHONY : src/google/protobuf/generated_message_table_driven_lite.cc.i
 
 src/google/protobuf/generated_message_table_driven_lite.s: src/google/protobuf/generated_message_table_driven_lite.cc.s
@@ -660,7 +660,7 @@ src/google/protobuf/generated_message_table_driven_lite.s: src/google/protobuf/g
 
 # target to generate assembly for a file
 src/google/protobuf/generated_message_table_driven_lite.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_table_driven_lite.cc.s
 .PHONY : src/google/protobuf/generated_message_table_driven_lite.cc.s
 
 src/google/protobuf/generated_message_util.o: src/google/protobuf/generated_message_util.cc.o
@@ -669,7 +669,7 @@ src/google/protobuf/generated_message_util.o: src/google/protobuf/generated_mess
 
 # target to build an object file
 src/google/protobuf/generated_message_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.o
 .PHONY : src/google/protobuf/generated_message_util.cc.o
 
 src/google/protobuf/generated_message_util.i: src/google/protobuf/generated_message_util.cc.i
@@ -678,7 +678,7 @@ src/google/protobuf/generated_message_util.i: src/google/protobuf/generated_mess
 
 # target to preprocess a source file
 src/google/protobuf/generated_message_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.i
 .PHONY : src/google/protobuf/generated_message_util.cc.i
 
 src/google/protobuf/generated_message_util.s: src/google/protobuf/generated_message_util.cc.s
@@ -687,7 +687,7 @@ src/google/protobuf/generated_message_util.s: src/google/protobuf/generated_mess
 
 # target to generate assembly for a file
 src/google/protobuf/generated_message_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/generated_message_util.cc.s
 .PHONY : src/google/protobuf/generated_message_util.cc.s
 
 src/google/protobuf/io/coded_stream.o: src/google/protobuf/io/coded_stream.cc.o
@@ -696,7 +696,7 @@ src/google/protobuf/io/coded_stream.o: src/google/protobuf/io/coded_stream.cc.o
 
 # target to build an object file
 src/google/protobuf/io/coded_stream.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.o
 .PHONY : src/google/protobuf/io/coded_stream.cc.o
 
 src/google/protobuf/io/coded_stream.i: src/google/protobuf/io/coded_stream.cc.i
@@ -705,7 +705,7 @@ src/google/protobuf/io/coded_stream.i: src/google/protobuf/io/coded_stream.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/io/coded_stream.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.i
 .PHONY : src/google/protobuf/io/coded_stream.cc.i
 
 src/google/protobuf/io/coded_stream.s: src/google/protobuf/io/coded_stream.cc.s
@@ -714,7 +714,7 @@ src/google/protobuf/io/coded_stream.s: src/google/protobuf/io/coded_stream.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/io/coded_stream.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/coded_stream.cc.s
 .PHONY : src/google/protobuf/io/coded_stream.cc.s
 
 src/google/protobuf/io/gzip_stream.o: src/google/protobuf/io/gzip_stream.cc.o
@@ -723,7 +723,7 @@ src/google/protobuf/io/gzip_stream.o: src/google/protobuf/io/gzip_stream.cc.o
 
 # target to build an object file
 src/google/protobuf/io/gzip_stream.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.o
 .PHONY : src/google/protobuf/io/gzip_stream.cc.o
 
 src/google/protobuf/io/gzip_stream.i: src/google/protobuf/io/gzip_stream.cc.i
@@ -732,7 +732,7 @@ src/google/protobuf/io/gzip_stream.i: src/google/protobuf/io/gzip_stream.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/io/gzip_stream.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.i
 .PHONY : src/google/protobuf/io/gzip_stream.cc.i
 
 src/google/protobuf/io/gzip_stream.s: src/google/protobuf/io/gzip_stream.cc.s
@@ -741,7 +741,7 @@ src/google/protobuf/io/gzip_stream.s: src/google/protobuf/io/gzip_stream.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/io/gzip_stream.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/gzip_stream.cc.s
 .PHONY : src/google/protobuf/io/gzip_stream.cc.s
 
 src/google/protobuf/io/printer.o: src/google/protobuf/io/printer.cc.o
@@ -750,7 +750,7 @@ src/google/protobuf/io/printer.o: src/google/protobuf/io/printer.cc.o
 
 # target to build an object file
 src/google/protobuf/io/printer.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.o
 .PHONY : src/google/protobuf/io/printer.cc.o
 
 src/google/protobuf/io/printer.i: src/google/protobuf/io/printer.cc.i
@@ -759,7 +759,7 @@ src/google/protobuf/io/printer.i: src/google/protobuf/io/printer.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/io/printer.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.i
 .PHONY : src/google/protobuf/io/printer.cc.i
 
 src/google/protobuf/io/printer.s: src/google/protobuf/io/printer.cc.s
@@ -768,7 +768,7 @@ src/google/protobuf/io/printer.s: src/google/protobuf/io/printer.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/io/printer.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/printer.cc.s
 .PHONY : src/google/protobuf/io/printer.cc.s
 
 src/google/protobuf/io/strtod.o: src/google/protobuf/io/strtod.cc.o
@@ -777,7 +777,7 @@ src/google/protobuf/io/strtod.o: src/google/protobuf/io/strtod.cc.o
 
 # target to build an object file
 src/google/protobuf/io/strtod.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.o
 .PHONY : src/google/protobuf/io/strtod.cc.o
 
 src/google/protobuf/io/strtod.i: src/google/protobuf/io/strtod.cc.i
@@ -786,7 +786,7 @@ src/google/protobuf/io/strtod.i: src/google/protobuf/io/strtod.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/io/strtod.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.i
 .PHONY : src/google/protobuf/io/strtod.cc.i
 
 src/google/protobuf/io/strtod.s: src/google/protobuf/io/strtod.cc.s
@@ -795,7 +795,7 @@ src/google/protobuf/io/strtod.s: src/google/protobuf/io/strtod.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/io/strtod.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/strtod.cc.s
 .PHONY : src/google/protobuf/io/strtod.cc.s
 
 src/google/protobuf/io/tokenizer.o: src/google/protobuf/io/tokenizer.cc.o
@@ -804,7 +804,7 @@ src/google/protobuf/io/tokenizer.o: src/google/protobuf/io/tokenizer.cc.o
 
 # target to build an object file
 src/google/protobuf/io/tokenizer.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.o
 .PHONY : src/google/protobuf/io/tokenizer.cc.o
 
 src/google/protobuf/io/tokenizer.i: src/google/protobuf/io/tokenizer.cc.i
@@ -813,7 +813,7 @@ src/google/protobuf/io/tokenizer.i: src/google/protobuf/io/tokenizer.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/io/tokenizer.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.i
 .PHONY : src/google/protobuf/io/tokenizer.cc.i
 
 src/google/protobuf/io/tokenizer.s: src/google/protobuf/io/tokenizer.cc.s
@@ -822,7 +822,7 @@ src/google/protobuf/io/tokenizer.s: src/google/protobuf/io/tokenizer.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/io/tokenizer.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/tokenizer.cc.s
 .PHONY : src/google/protobuf/io/tokenizer.cc.s
 
 src/google/protobuf/io/zero_copy_stream.o: src/google/protobuf/io/zero_copy_stream.cc.o
@@ -831,7 +831,7 @@ src/google/protobuf/io/zero_copy_stream.o: src/google/protobuf/io/zero_copy_stre
 
 # target to build an object file
 src/google/protobuf/io/zero_copy_stream.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.o
 .PHONY : src/google/protobuf/io/zero_copy_stream.cc.o
 
 src/google/protobuf/io/zero_copy_stream.i: src/google/protobuf/io/zero_copy_stream.cc.i
@@ -840,7 +840,7 @@ src/google/protobuf/io/zero_copy_stream.i: src/google/protobuf/io/zero_copy_stre
 
 # target to preprocess a source file
 src/google/protobuf/io/zero_copy_stream.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.i
 .PHONY : src/google/protobuf/io/zero_copy_stream.cc.i
 
 src/google/protobuf/io/zero_copy_stream.s: src/google/protobuf/io/zero_copy_stream.cc.s
@@ -849,7 +849,7 @@ src/google/protobuf/io/zero_copy_stream.s: src/google/protobuf/io/zero_copy_stre
 
 # target to generate assembly for a file
 src/google/protobuf/io/zero_copy_stream.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream.cc.s
 .PHONY : src/google/protobuf/io/zero_copy_stream.cc.s
 
 src/google/protobuf/io/zero_copy_stream_impl.o: src/google/protobuf/io/zero_copy_stream_impl.cc.o
@@ -858,7 +858,7 @@ src/google/protobuf/io/zero_copy_stream_impl.o: src/google/protobuf/io/zero_copy
 
 # target to build an object file
 src/google/protobuf/io/zero_copy_stream_impl.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.o
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl.cc.o
 
 src/google/protobuf/io/zero_copy_stream_impl.i: src/google/protobuf/io/zero_copy_stream_impl.cc.i
@@ -867,7 +867,7 @@ src/google/protobuf/io/zero_copy_stream_impl.i: src/google/protobuf/io/zero_copy
 
 # target to preprocess a source file
 src/google/protobuf/io/zero_copy_stream_impl.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.i
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl.cc.i
 
 src/google/protobuf/io/zero_copy_stream_impl.s: src/google/protobuf/io/zero_copy_stream_impl.cc.s
@@ -876,7 +876,7 @@ src/google/protobuf/io/zero_copy_stream_impl.s: src/google/protobuf/io/zero_copy
 
 # target to generate assembly for a file
 src/google/protobuf/io/zero_copy_stream_impl.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl.cc.s
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl.cc.s
 
 src/google/protobuf/io/zero_copy_stream_impl_lite.o: src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
@@ -885,7 +885,7 @@ src/google/protobuf/io/zero_copy_stream_impl_lite.o: src/google/protobuf/io/zero
 
 # target to build an object file
 src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
 
 src/google/protobuf/io/zero_copy_stream_impl_lite.i: src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
@@ -894,7 +894,7 @@ src/google/protobuf/io/zero_copy_stream_impl_lite.i: src/google/protobuf/io/zero
 
 # target to preprocess a source file
 src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
 
 src/google/protobuf/io/zero_copy_stream_impl_lite.s: src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
@@ -903,7 +903,7 @@ src/google/protobuf/io/zero_copy_stream_impl_lite.s: src/google/protobuf/io/zero
 
 # target to generate assembly for a file
 src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
 .PHONY : src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
 
 src/google/protobuf/map_field.o: src/google/protobuf/map_field.cc.o
@@ -912,7 +912,7 @@ src/google/protobuf/map_field.o: src/google/protobuf/map_field.cc.o
 
 # target to build an object file
 src/google/protobuf/map_field.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.o
 .PHONY : src/google/protobuf/map_field.cc.o
 
 src/google/protobuf/map_field.i: src/google/protobuf/map_field.cc.i
@@ -921,7 +921,7 @@ src/google/protobuf/map_field.i: src/google/protobuf/map_field.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/map_field.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.i
 .PHONY : src/google/protobuf/map_field.cc.i
 
 src/google/protobuf/map_field.s: src/google/protobuf/map_field.cc.s
@@ -930,7 +930,7 @@ src/google/protobuf/map_field.s: src/google/protobuf/map_field.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/map_field.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/map_field.cc.s
 .PHONY : src/google/protobuf/map_field.cc.s
 
 src/google/protobuf/message.o: src/google/protobuf/message.cc.o
@@ -939,7 +939,7 @@ src/google/protobuf/message.o: src/google/protobuf/message.cc.o
 
 # target to build an object file
 src/google/protobuf/message.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.o
 .PHONY : src/google/protobuf/message.cc.o
 
 src/google/protobuf/message.i: src/google/protobuf/message.cc.i
@@ -948,7 +948,7 @@ src/google/protobuf/message.i: src/google/protobuf/message.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/message.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.i
 .PHONY : src/google/protobuf/message.cc.i
 
 src/google/protobuf/message.s: src/google/protobuf/message.cc.s
@@ -957,7 +957,7 @@ src/google/protobuf/message.s: src/google/protobuf/message.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/message.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message.cc.s
 .PHONY : src/google/protobuf/message.cc.s
 
 src/google/protobuf/message_lite.o: src/google/protobuf/message_lite.cc.o
@@ -966,7 +966,7 @@ src/google/protobuf/message_lite.o: src/google/protobuf/message_lite.cc.o
 
 # target to build an object file
 src/google/protobuf/message_lite.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.o
 .PHONY : src/google/protobuf/message_lite.cc.o
 
 src/google/protobuf/message_lite.i: src/google/protobuf/message_lite.cc.i
@@ -975,7 +975,7 @@ src/google/protobuf/message_lite.i: src/google/protobuf/message_lite.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/message_lite.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.i
 .PHONY : src/google/protobuf/message_lite.cc.i
 
 src/google/protobuf/message_lite.s: src/google/protobuf/message_lite.cc.s
@@ -984,7 +984,7 @@ src/google/protobuf/message_lite.s: src/google/protobuf/message_lite.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/message_lite.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/message_lite.cc.s
 .PHONY : src/google/protobuf/message_lite.cc.s
 
 src/google/protobuf/reflection_ops.o: src/google/protobuf/reflection_ops.cc.o
@@ -993,7 +993,7 @@ src/google/protobuf/reflection_ops.o: src/google/protobuf/reflection_ops.cc.o
 
 # target to build an object file
 src/google/protobuf/reflection_ops.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.o
 .PHONY : src/google/protobuf/reflection_ops.cc.o
 
 src/google/protobuf/reflection_ops.i: src/google/protobuf/reflection_ops.cc.i
@@ -1002,7 +1002,7 @@ src/google/protobuf/reflection_ops.i: src/google/protobuf/reflection_ops.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/reflection_ops.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.i
 .PHONY : src/google/protobuf/reflection_ops.cc.i
 
 src/google/protobuf/reflection_ops.s: src/google/protobuf/reflection_ops.cc.s
@@ -1011,7 +1011,7 @@ src/google/protobuf/reflection_ops.s: src/google/protobuf/reflection_ops.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/reflection_ops.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/reflection_ops.cc.s
 .PHONY : src/google/protobuf/reflection_ops.cc.s
 
 src/google/protobuf/repeated_field.o: src/google/protobuf/repeated_field.cc.o
@@ -1020,7 +1020,7 @@ src/google/protobuf/repeated_field.o: src/google/protobuf/repeated_field.cc.o
 
 # target to build an object file
 src/google/protobuf/repeated_field.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.o
 .PHONY : src/google/protobuf/repeated_field.cc.o
 
 src/google/protobuf/repeated_field.i: src/google/protobuf/repeated_field.cc.i
@@ -1029,7 +1029,7 @@ src/google/protobuf/repeated_field.i: src/google/protobuf/repeated_field.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/repeated_field.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.i
 .PHONY : src/google/protobuf/repeated_field.cc.i
 
 src/google/protobuf/repeated_field.s: src/google/protobuf/repeated_field.cc.s
@@ -1038,7 +1038,7 @@ src/google/protobuf/repeated_field.s: src/google/protobuf/repeated_field.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/repeated_field.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/repeated_field.cc.s
 .PHONY : src/google/protobuf/repeated_field.cc.s
 
 src/google/protobuf/service.o: src/google/protobuf/service.cc.o
@@ -1047,7 +1047,7 @@ src/google/protobuf/service.o: src/google/protobuf/service.cc.o
 
 # target to build an object file
 src/google/protobuf/service.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.o
 .PHONY : src/google/protobuf/service.cc.o
 
 src/google/protobuf/service.i: src/google/protobuf/service.cc.i
@@ -1056,7 +1056,7 @@ src/google/protobuf/service.i: src/google/protobuf/service.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/service.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.i
 .PHONY : src/google/protobuf/service.cc.i
 
 src/google/protobuf/service.s: src/google/protobuf/service.cc.s
@@ -1065,7 +1065,7 @@ src/google/protobuf/service.s: src/google/protobuf/service.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/service.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/service.cc.s
 .PHONY : src/google/protobuf/service.cc.s
 
 src/google/protobuf/source_context.pb.o: src/google/protobuf/source_context.pb.cc.o
@@ -1074,7 +1074,7 @@ src/google/protobuf/source_context.pb.o: src/google/protobuf/source_context.pb.c
 
 # target to build an object file
 src/google/protobuf/source_context.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.o
 .PHONY : src/google/protobuf/source_context.pb.cc.o
 
 src/google/protobuf/source_context.pb.i: src/google/protobuf/source_context.pb.cc.i
@@ -1083,7 +1083,7 @@ src/google/protobuf/source_context.pb.i: src/google/protobuf/source_context.pb.c
 
 # target to preprocess a source file
 src/google/protobuf/source_context.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.i
 .PHONY : src/google/protobuf/source_context.pb.cc.i
 
 src/google/protobuf/source_context.pb.s: src/google/protobuf/source_context.pb.cc.s
@@ -1092,7 +1092,7 @@ src/google/protobuf/source_context.pb.s: src/google/protobuf/source_context.pb.c
 
 # target to generate assembly for a file
 src/google/protobuf/source_context.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/source_context.pb.cc.s
 .PHONY : src/google/protobuf/source_context.pb.cc.s
 
 src/google/protobuf/struct.pb.o: src/google/protobuf/struct.pb.cc.o
@@ -1101,7 +1101,7 @@ src/google/protobuf/struct.pb.o: src/google/protobuf/struct.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/struct.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.o
 .PHONY : src/google/protobuf/struct.pb.cc.o
 
 src/google/protobuf/struct.pb.i: src/google/protobuf/struct.pb.cc.i
@@ -1110,7 +1110,7 @@ src/google/protobuf/struct.pb.i: src/google/protobuf/struct.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/struct.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.i
 .PHONY : src/google/protobuf/struct.pb.cc.i
 
 src/google/protobuf/struct.pb.s: src/google/protobuf/struct.pb.cc.s
@@ -1119,7 +1119,7 @@ src/google/protobuf/struct.pb.s: src/google/protobuf/struct.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/struct.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/struct.pb.cc.s
 .PHONY : src/google/protobuf/struct.pb.cc.s
 
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.o: src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
@@ -1128,7 +1128,7 @@ src/google/protobuf/stubs/atomicops_internals_x86_gcc.o: src/google/protobuf/stu
 
 # target to build an object file
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
 .PHONY : src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.o
 
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.i: src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.i
@@ -1137,7 +1137,7 @@ src/google/protobuf/stubs/atomicops_internals_x86_gcc.i: src/google/protobuf/stu
 
 # target to preprocess a source file
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.i
 .PHONY : src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.i
 
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.s: src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.s
@@ -1146,7 +1146,7 @@ src/google/protobuf/stubs/atomicops_internals_x86_gcc.s: src/google/protobuf/stu
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.s
 .PHONY : src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc.s
 
 src/google/protobuf/stubs/bytestream.o: src/google/protobuf/stubs/bytestream.cc.o
@@ -1155,7 +1155,7 @@ src/google/protobuf/stubs/bytestream.o: src/google/protobuf/stubs/bytestream.cc.
 
 # target to build an object file
 src/google/protobuf/stubs/bytestream.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.o
 .PHONY : src/google/protobuf/stubs/bytestream.cc.o
 
 src/google/protobuf/stubs/bytestream.i: src/google/protobuf/stubs/bytestream.cc.i
@@ -1164,7 +1164,7 @@ src/google/protobuf/stubs/bytestream.i: src/google/protobuf/stubs/bytestream.cc.
 
 # target to preprocess a source file
 src/google/protobuf/stubs/bytestream.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.i
 .PHONY : src/google/protobuf/stubs/bytestream.cc.i
 
 src/google/protobuf/stubs/bytestream.s: src/google/protobuf/stubs/bytestream.cc.s
@@ -1173,7 +1173,7 @@ src/google/protobuf/stubs/bytestream.s: src/google/protobuf/stubs/bytestream.cc.
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/bytestream.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/bytestream.cc.s
 .PHONY : src/google/protobuf/stubs/bytestream.cc.s
 
 src/google/protobuf/stubs/common.o: src/google/protobuf/stubs/common.cc.o
@@ -1182,7 +1182,7 @@ src/google/protobuf/stubs/common.o: src/google/protobuf/stubs/common.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/common.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.o
 .PHONY : src/google/protobuf/stubs/common.cc.o
 
 src/google/protobuf/stubs/common.i: src/google/protobuf/stubs/common.cc.i
@@ -1191,7 +1191,7 @@ src/google/protobuf/stubs/common.i: src/google/protobuf/stubs/common.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/common.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.i
 .PHONY : src/google/protobuf/stubs/common.cc.i
 
 src/google/protobuf/stubs/common.s: src/google/protobuf/stubs/common.cc.s
@@ -1200,7 +1200,7 @@ src/google/protobuf/stubs/common.s: src/google/protobuf/stubs/common.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/common.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/common.cc.s
 .PHONY : src/google/protobuf/stubs/common.cc.s
 
 src/google/protobuf/stubs/int128.o: src/google/protobuf/stubs/int128.cc.o
@@ -1209,7 +1209,7 @@ src/google/protobuf/stubs/int128.o: src/google/protobuf/stubs/int128.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/int128.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.o
 .PHONY : src/google/protobuf/stubs/int128.cc.o
 
 src/google/protobuf/stubs/int128.i: src/google/protobuf/stubs/int128.cc.i
@@ -1218,7 +1218,7 @@ src/google/protobuf/stubs/int128.i: src/google/protobuf/stubs/int128.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/int128.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.i
 .PHONY : src/google/protobuf/stubs/int128.cc.i
 
 src/google/protobuf/stubs/int128.s: src/google/protobuf/stubs/int128.cc.s
@@ -1227,7 +1227,7 @@ src/google/protobuf/stubs/int128.s: src/google/protobuf/stubs/int128.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/int128.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/int128.cc.s
 .PHONY : src/google/protobuf/stubs/int128.cc.s
 
 src/google/protobuf/stubs/io_win32.o: src/google/protobuf/stubs/io_win32.cc.o
@@ -1236,7 +1236,7 @@ src/google/protobuf/stubs/io_win32.o: src/google/protobuf/stubs/io_win32.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/io_win32.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.o
 .PHONY : src/google/protobuf/stubs/io_win32.cc.o
 
 src/google/protobuf/stubs/io_win32.i: src/google/protobuf/stubs/io_win32.cc.i
@@ -1245,7 +1245,7 @@ src/google/protobuf/stubs/io_win32.i: src/google/protobuf/stubs/io_win32.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/io_win32.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.i
 .PHONY : src/google/protobuf/stubs/io_win32.cc.i
 
 src/google/protobuf/stubs/io_win32.s: src/google/protobuf/stubs/io_win32.cc.s
@@ -1254,7 +1254,7 @@ src/google/protobuf/stubs/io_win32.s: src/google/protobuf/stubs/io_win32.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/io_win32.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/io_win32.cc.s
 .PHONY : src/google/protobuf/stubs/io_win32.cc.s
 
 src/google/protobuf/stubs/mathlimits.o: src/google/protobuf/stubs/mathlimits.cc.o
@@ -1263,7 +1263,7 @@ src/google/protobuf/stubs/mathlimits.o: src/google/protobuf/stubs/mathlimits.cc.
 
 # target to build an object file
 src/google/protobuf/stubs/mathlimits.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.o
 .PHONY : src/google/protobuf/stubs/mathlimits.cc.o
 
 src/google/protobuf/stubs/mathlimits.i: src/google/protobuf/stubs/mathlimits.cc.i
@@ -1272,7 +1272,7 @@ src/google/protobuf/stubs/mathlimits.i: src/google/protobuf/stubs/mathlimits.cc.
 
 # target to preprocess a source file
 src/google/protobuf/stubs/mathlimits.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.i
 .PHONY : src/google/protobuf/stubs/mathlimits.cc.i
 
 src/google/protobuf/stubs/mathlimits.s: src/google/protobuf/stubs/mathlimits.cc.s
@@ -1281,7 +1281,7 @@ src/google/protobuf/stubs/mathlimits.s: src/google/protobuf/stubs/mathlimits.cc.
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/mathlimits.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/mathlimits.cc.s
 .PHONY : src/google/protobuf/stubs/mathlimits.cc.s
 
 src/google/protobuf/stubs/once.o: src/google/protobuf/stubs/once.cc.o
@@ -1290,7 +1290,7 @@ src/google/protobuf/stubs/once.o: src/google/protobuf/stubs/once.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/once.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.o
 .PHONY : src/google/protobuf/stubs/once.cc.o
 
 src/google/protobuf/stubs/once.i: src/google/protobuf/stubs/once.cc.i
@@ -1299,7 +1299,7 @@ src/google/protobuf/stubs/once.i: src/google/protobuf/stubs/once.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/once.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.i
 .PHONY : src/google/protobuf/stubs/once.cc.i
 
 src/google/protobuf/stubs/once.s: src/google/protobuf/stubs/once.cc.s
@@ -1308,7 +1308,7 @@ src/google/protobuf/stubs/once.s: src/google/protobuf/stubs/once.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/once.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/once.cc.s
 .PHONY : src/google/protobuf/stubs/once.cc.s
 
 src/google/protobuf/stubs/status.o: src/google/protobuf/stubs/status.cc.o
@@ -1317,7 +1317,7 @@ src/google/protobuf/stubs/status.o: src/google/protobuf/stubs/status.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/status.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.o
 .PHONY : src/google/protobuf/stubs/status.cc.o
 
 src/google/protobuf/stubs/status.i: src/google/protobuf/stubs/status.cc.i
@@ -1326,7 +1326,7 @@ src/google/protobuf/stubs/status.i: src/google/protobuf/stubs/status.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/status.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.i
 .PHONY : src/google/protobuf/stubs/status.cc.i
 
 src/google/protobuf/stubs/status.s: src/google/protobuf/stubs/status.cc.s
@@ -1335,7 +1335,7 @@ src/google/protobuf/stubs/status.s: src/google/protobuf/stubs/status.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/status.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/status.cc.s
 .PHONY : src/google/protobuf/stubs/status.cc.s
 
 src/google/protobuf/stubs/statusor.o: src/google/protobuf/stubs/statusor.cc.o
@@ -1344,7 +1344,7 @@ src/google/protobuf/stubs/statusor.o: src/google/protobuf/stubs/statusor.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/statusor.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.o
 .PHONY : src/google/protobuf/stubs/statusor.cc.o
 
 src/google/protobuf/stubs/statusor.i: src/google/protobuf/stubs/statusor.cc.i
@@ -1353,7 +1353,7 @@ src/google/protobuf/stubs/statusor.i: src/google/protobuf/stubs/statusor.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/statusor.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.i
 .PHONY : src/google/protobuf/stubs/statusor.cc.i
 
 src/google/protobuf/stubs/statusor.s: src/google/protobuf/stubs/statusor.cc.s
@@ -1362,7 +1362,7 @@ src/google/protobuf/stubs/statusor.s: src/google/protobuf/stubs/statusor.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/statusor.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/statusor.cc.s
 .PHONY : src/google/protobuf/stubs/statusor.cc.s
 
 src/google/protobuf/stubs/stringpiece.o: src/google/protobuf/stubs/stringpiece.cc.o
@@ -1371,7 +1371,7 @@ src/google/protobuf/stubs/stringpiece.o: src/google/protobuf/stubs/stringpiece.c
 
 # target to build an object file
 src/google/protobuf/stubs/stringpiece.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.o
 .PHONY : src/google/protobuf/stubs/stringpiece.cc.o
 
 src/google/protobuf/stubs/stringpiece.i: src/google/protobuf/stubs/stringpiece.cc.i
@@ -1380,7 +1380,7 @@ src/google/protobuf/stubs/stringpiece.i: src/google/protobuf/stubs/stringpiece.c
 
 # target to preprocess a source file
 src/google/protobuf/stubs/stringpiece.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.i
 .PHONY : src/google/protobuf/stubs/stringpiece.cc.i
 
 src/google/protobuf/stubs/stringpiece.s: src/google/protobuf/stubs/stringpiece.cc.s
@@ -1389,7 +1389,7 @@ src/google/protobuf/stubs/stringpiece.s: src/google/protobuf/stubs/stringpiece.c
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/stringpiece.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringpiece.cc.s
 .PHONY : src/google/protobuf/stubs/stringpiece.cc.s
 
 src/google/protobuf/stubs/stringprintf.o: src/google/protobuf/stubs/stringprintf.cc.o
@@ -1398,7 +1398,7 @@ src/google/protobuf/stubs/stringprintf.o: src/google/protobuf/stubs/stringprintf
 
 # target to build an object file
 src/google/protobuf/stubs/stringprintf.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.o
 .PHONY : src/google/protobuf/stubs/stringprintf.cc.o
 
 src/google/protobuf/stubs/stringprintf.i: src/google/protobuf/stubs/stringprintf.cc.i
@@ -1407,7 +1407,7 @@ src/google/protobuf/stubs/stringprintf.i: src/google/protobuf/stubs/stringprintf
 
 # target to preprocess a source file
 src/google/protobuf/stubs/stringprintf.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.i
 .PHONY : src/google/protobuf/stubs/stringprintf.cc.i
 
 src/google/protobuf/stubs/stringprintf.s: src/google/protobuf/stubs/stringprintf.cc.s
@@ -1416,7 +1416,7 @@ src/google/protobuf/stubs/stringprintf.s: src/google/protobuf/stubs/stringprintf
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/stringprintf.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/stringprintf.cc.s
 .PHONY : src/google/protobuf/stubs/stringprintf.cc.s
 
 src/google/protobuf/stubs/structurally_valid.o: src/google/protobuf/stubs/structurally_valid.cc.o
@@ -1425,7 +1425,7 @@ src/google/protobuf/stubs/structurally_valid.o: src/google/protobuf/stubs/struct
 
 # target to build an object file
 src/google/protobuf/stubs/structurally_valid.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.o
 .PHONY : src/google/protobuf/stubs/structurally_valid.cc.o
 
 src/google/protobuf/stubs/structurally_valid.i: src/google/protobuf/stubs/structurally_valid.cc.i
@@ -1434,7 +1434,7 @@ src/google/protobuf/stubs/structurally_valid.i: src/google/protobuf/stubs/struct
 
 # target to preprocess a source file
 src/google/protobuf/stubs/structurally_valid.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.i
 .PHONY : src/google/protobuf/stubs/structurally_valid.cc.i
 
 src/google/protobuf/stubs/structurally_valid.s: src/google/protobuf/stubs/structurally_valid.cc.s
@@ -1443,7 +1443,7 @@ src/google/protobuf/stubs/structurally_valid.s: src/google/protobuf/stubs/struct
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/structurally_valid.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/structurally_valid.cc.s
 .PHONY : src/google/protobuf/stubs/structurally_valid.cc.s
 
 src/google/protobuf/stubs/strutil.o: src/google/protobuf/stubs/strutil.cc.o
@@ -1452,7 +1452,7 @@ src/google/protobuf/stubs/strutil.o: src/google/protobuf/stubs/strutil.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/strutil.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.o
 .PHONY : src/google/protobuf/stubs/strutil.cc.o
 
 src/google/protobuf/stubs/strutil.i: src/google/protobuf/stubs/strutil.cc.i
@@ -1461,7 +1461,7 @@ src/google/protobuf/stubs/strutil.i: src/google/protobuf/stubs/strutil.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/strutil.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.i
 .PHONY : src/google/protobuf/stubs/strutil.cc.i
 
 src/google/protobuf/stubs/strutil.s: src/google/protobuf/stubs/strutil.cc.s
@@ -1470,7 +1470,7 @@ src/google/protobuf/stubs/strutil.s: src/google/protobuf/stubs/strutil.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/strutil.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/strutil.cc.s
 .PHONY : src/google/protobuf/stubs/strutil.cc.s
 
 src/google/protobuf/stubs/substitute.o: src/google/protobuf/stubs/substitute.cc.o
@@ -1479,7 +1479,7 @@ src/google/protobuf/stubs/substitute.o: src/google/protobuf/stubs/substitute.cc.
 
 # target to build an object file
 src/google/protobuf/stubs/substitute.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.o
 .PHONY : src/google/protobuf/stubs/substitute.cc.o
 
 src/google/protobuf/stubs/substitute.i: src/google/protobuf/stubs/substitute.cc.i
@@ -1488,7 +1488,7 @@ src/google/protobuf/stubs/substitute.i: src/google/protobuf/stubs/substitute.cc.
 
 # target to preprocess a source file
 src/google/protobuf/stubs/substitute.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.i
 .PHONY : src/google/protobuf/stubs/substitute.cc.i
 
 src/google/protobuf/stubs/substitute.s: src/google/protobuf/stubs/substitute.cc.s
@@ -1497,7 +1497,7 @@ src/google/protobuf/stubs/substitute.s: src/google/protobuf/stubs/substitute.cc.
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/substitute.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/substitute.cc.s
 .PHONY : src/google/protobuf/stubs/substitute.cc.s
 
 src/google/protobuf/stubs/time.o: src/google/protobuf/stubs/time.cc.o
@@ -1506,7 +1506,7 @@ src/google/protobuf/stubs/time.o: src/google/protobuf/stubs/time.cc.o
 
 # target to build an object file
 src/google/protobuf/stubs/time.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.o
 .PHONY : src/google/protobuf/stubs/time.cc.o
 
 src/google/protobuf/stubs/time.i: src/google/protobuf/stubs/time.cc.i
@@ -1515,7 +1515,7 @@ src/google/protobuf/stubs/time.i: src/google/protobuf/stubs/time.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/stubs/time.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.i
 .PHONY : src/google/protobuf/stubs/time.cc.i
 
 src/google/protobuf/stubs/time.s: src/google/protobuf/stubs/time.cc.s
@@ -1524,7 +1524,7 @@ src/google/protobuf/stubs/time.s: src/google/protobuf/stubs/time.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/stubs/time.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/stubs/time.cc.s
 .PHONY : src/google/protobuf/stubs/time.cc.s
 
 src/google/protobuf/text_format.o: src/google/protobuf/text_format.cc.o
@@ -1533,7 +1533,7 @@ src/google/protobuf/text_format.o: src/google/protobuf/text_format.cc.o
 
 # target to build an object file
 src/google/protobuf/text_format.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.o
 .PHONY : src/google/protobuf/text_format.cc.o
 
 src/google/protobuf/text_format.i: src/google/protobuf/text_format.cc.i
@@ -1542,7 +1542,7 @@ src/google/protobuf/text_format.i: src/google/protobuf/text_format.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/text_format.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.i
 .PHONY : src/google/protobuf/text_format.cc.i
 
 src/google/protobuf/text_format.s: src/google/protobuf/text_format.cc.s
@@ -1551,7 +1551,7 @@ src/google/protobuf/text_format.s: src/google/protobuf/text_format.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/text_format.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/text_format.cc.s
 .PHONY : src/google/protobuf/text_format.cc.s
 
 src/google/protobuf/timestamp.pb.o: src/google/protobuf/timestamp.pb.cc.o
@@ -1560,7 +1560,7 @@ src/google/protobuf/timestamp.pb.o: src/google/protobuf/timestamp.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/timestamp.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.o
 .PHONY : src/google/protobuf/timestamp.pb.cc.o
 
 src/google/protobuf/timestamp.pb.i: src/google/protobuf/timestamp.pb.cc.i
@@ -1569,7 +1569,7 @@ src/google/protobuf/timestamp.pb.i: src/google/protobuf/timestamp.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/timestamp.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.i
 .PHONY : src/google/protobuf/timestamp.pb.cc.i
 
 src/google/protobuf/timestamp.pb.s: src/google/protobuf/timestamp.pb.cc.s
@@ -1578,7 +1578,7 @@ src/google/protobuf/timestamp.pb.s: src/google/protobuf/timestamp.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/timestamp.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/timestamp.pb.cc.s
 .PHONY : src/google/protobuf/timestamp.pb.cc.s
 
 src/google/protobuf/type.pb.o: src/google/protobuf/type.pb.cc.o
@@ -1587,7 +1587,7 @@ src/google/protobuf/type.pb.o: src/google/protobuf/type.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/type.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.o
 .PHONY : src/google/protobuf/type.pb.cc.o
 
 src/google/protobuf/type.pb.i: src/google/protobuf/type.pb.cc.i
@@ -1596,7 +1596,7 @@ src/google/protobuf/type.pb.i: src/google/protobuf/type.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/type.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.i
 .PHONY : src/google/protobuf/type.pb.cc.i
 
 src/google/protobuf/type.pb.s: src/google/protobuf/type.pb.cc.s
@@ -1605,7 +1605,7 @@ src/google/protobuf/type.pb.s: src/google/protobuf/type.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/type.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/type.pb.cc.s
 .PHONY : src/google/protobuf/type.pb.cc.s
 
 src/google/protobuf/unknown_field_set.o: src/google/protobuf/unknown_field_set.cc.o
@@ -1614,7 +1614,7 @@ src/google/protobuf/unknown_field_set.o: src/google/protobuf/unknown_field_set.c
 
 # target to build an object file
 src/google/protobuf/unknown_field_set.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.o
 .PHONY : src/google/protobuf/unknown_field_set.cc.o
 
 src/google/protobuf/unknown_field_set.i: src/google/protobuf/unknown_field_set.cc.i
@@ -1623,7 +1623,7 @@ src/google/protobuf/unknown_field_set.i: src/google/protobuf/unknown_field_set.c
 
 # target to preprocess a source file
 src/google/protobuf/unknown_field_set.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.i
 .PHONY : src/google/protobuf/unknown_field_set.cc.i
 
 src/google/protobuf/unknown_field_set.s: src/google/protobuf/unknown_field_set.cc.s
@@ -1632,7 +1632,7 @@ src/google/protobuf/unknown_field_set.s: src/google/protobuf/unknown_field_set.c
 
 # target to generate assembly for a file
 src/google/protobuf/unknown_field_set.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/unknown_field_set.cc.s
 .PHONY : src/google/protobuf/unknown_field_set.cc.s
 
 src/google/protobuf/util/delimited_message_util.o: src/google/protobuf/util/delimited_message_util.cc.o
@@ -1641,7 +1641,7 @@ src/google/protobuf/util/delimited_message_util.o: src/google/protobuf/util/deli
 
 # target to build an object file
 src/google/protobuf/util/delimited_message_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.o
 .PHONY : src/google/protobuf/util/delimited_message_util.cc.o
 
 src/google/protobuf/util/delimited_message_util.i: src/google/protobuf/util/delimited_message_util.cc.i
@@ -1650,7 +1650,7 @@ src/google/protobuf/util/delimited_message_util.i: src/google/protobuf/util/deli
 
 # target to preprocess a source file
 src/google/protobuf/util/delimited_message_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.i
 .PHONY : src/google/protobuf/util/delimited_message_util.cc.i
 
 src/google/protobuf/util/delimited_message_util.s: src/google/protobuf/util/delimited_message_util.cc.s
@@ -1659,7 +1659,7 @@ src/google/protobuf/util/delimited_message_util.s: src/google/protobuf/util/deli
 
 # target to generate assembly for a file
 src/google/protobuf/util/delimited_message_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/delimited_message_util.cc.s
 .PHONY : src/google/protobuf/util/delimited_message_util.cc.s
 
 src/google/protobuf/util/field_comparator.o: src/google/protobuf/util/field_comparator.cc.o
@@ -1668,7 +1668,7 @@ src/google/protobuf/util/field_comparator.o: src/google/protobuf/util/field_comp
 
 # target to build an object file
 src/google/protobuf/util/field_comparator.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.o
 .PHONY : src/google/protobuf/util/field_comparator.cc.o
 
 src/google/protobuf/util/field_comparator.i: src/google/protobuf/util/field_comparator.cc.i
@@ -1677,7 +1677,7 @@ src/google/protobuf/util/field_comparator.i: src/google/protobuf/util/field_comp
 
 # target to preprocess a source file
 src/google/protobuf/util/field_comparator.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.i
 .PHONY : src/google/protobuf/util/field_comparator.cc.i
 
 src/google/protobuf/util/field_comparator.s: src/google/protobuf/util/field_comparator.cc.s
@@ -1686,7 +1686,7 @@ src/google/protobuf/util/field_comparator.s: src/google/protobuf/util/field_comp
 
 # target to generate assembly for a file
 src/google/protobuf/util/field_comparator.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_comparator.cc.s
 .PHONY : src/google/protobuf/util/field_comparator.cc.s
 
 src/google/protobuf/util/field_mask_util.o: src/google/protobuf/util/field_mask_util.cc.o
@@ -1695,7 +1695,7 @@ src/google/protobuf/util/field_mask_util.o: src/google/protobuf/util/field_mask_
 
 # target to build an object file
 src/google/protobuf/util/field_mask_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.o
 .PHONY : src/google/protobuf/util/field_mask_util.cc.o
 
 src/google/protobuf/util/field_mask_util.i: src/google/protobuf/util/field_mask_util.cc.i
@@ -1704,7 +1704,7 @@ src/google/protobuf/util/field_mask_util.i: src/google/protobuf/util/field_mask_
 
 # target to preprocess a source file
 src/google/protobuf/util/field_mask_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.i
 .PHONY : src/google/protobuf/util/field_mask_util.cc.i
 
 src/google/protobuf/util/field_mask_util.s: src/google/protobuf/util/field_mask_util.cc.s
@@ -1713,7 +1713,7 @@ src/google/protobuf/util/field_mask_util.s: src/google/protobuf/util/field_mask_
 
 # target to generate assembly for a file
 src/google/protobuf/util/field_mask_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/field_mask_util.cc.s
 .PHONY : src/google/protobuf/util/field_mask_util.cc.s
 
 src/google/protobuf/util/internal/datapiece.o: src/google/protobuf/util/internal/datapiece.cc.o
@@ -1722,7 +1722,7 @@ src/google/protobuf/util/internal/datapiece.o: src/google/protobuf/util/internal
 
 # target to build an object file
 src/google/protobuf/util/internal/datapiece.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.o
 .PHONY : src/google/protobuf/util/internal/datapiece.cc.o
 
 src/google/protobuf/util/internal/datapiece.i: src/google/protobuf/util/internal/datapiece.cc.i
@@ -1731,7 +1731,7 @@ src/google/protobuf/util/internal/datapiece.i: src/google/protobuf/util/internal
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/datapiece.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.i
 .PHONY : src/google/protobuf/util/internal/datapiece.cc.i
 
 src/google/protobuf/util/internal/datapiece.s: src/google/protobuf/util/internal/datapiece.cc.s
@@ -1740,7 +1740,7 @@ src/google/protobuf/util/internal/datapiece.s: src/google/protobuf/util/internal
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/datapiece.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/datapiece.cc.s
 .PHONY : src/google/protobuf/util/internal/datapiece.cc.s
 
 src/google/protobuf/util/internal/default_value_objectwriter.o: src/google/protobuf/util/internal/default_value_objectwriter.cc.o
@@ -1749,7 +1749,7 @@ src/google/protobuf/util/internal/default_value_objectwriter.o: src/google/proto
 
 # target to build an object file
 src/google/protobuf/util/internal/default_value_objectwriter.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.o
 .PHONY : src/google/protobuf/util/internal/default_value_objectwriter.cc.o
 
 src/google/protobuf/util/internal/default_value_objectwriter.i: src/google/protobuf/util/internal/default_value_objectwriter.cc.i
@@ -1758,7 +1758,7 @@ src/google/protobuf/util/internal/default_value_objectwriter.i: src/google/proto
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/default_value_objectwriter.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.i
 .PHONY : src/google/protobuf/util/internal/default_value_objectwriter.cc.i
 
 src/google/protobuf/util/internal/default_value_objectwriter.s: src/google/protobuf/util/internal/default_value_objectwriter.cc.s
@@ -1767,7 +1767,7 @@ src/google/protobuf/util/internal/default_value_objectwriter.s: src/google/proto
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/default_value_objectwriter.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/default_value_objectwriter.cc.s
 .PHONY : src/google/protobuf/util/internal/default_value_objectwriter.cc.s
 
 src/google/protobuf/util/internal/field_mask_utility.o: src/google/protobuf/util/internal/field_mask_utility.cc.o
@@ -1776,7 +1776,7 @@ src/google/protobuf/util/internal/field_mask_utility.o: src/google/protobuf/util
 
 # target to build an object file
 src/google/protobuf/util/internal/field_mask_utility.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.o
 .PHONY : src/google/protobuf/util/internal/field_mask_utility.cc.o
 
 src/google/protobuf/util/internal/field_mask_utility.i: src/google/protobuf/util/internal/field_mask_utility.cc.i
@@ -1785,7 +1785,7 @@ src/google/protobuf/util/internal/field_mask_utility.i: src/google/protobuf/util
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/field_mask_utility.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.i
 .PHONY : src/google/protobuf/util/internal/field_mask_utility.cc.i
 
 src/google/protobuf/util/internal/field_mask_utility.s: src/google/protobuf/util/internal/field_mask_utility.cc.s
@@ -1794,7 +1794,7 @@ src/google/protobuf/util/internal/field_mask_utility.s: src/google/protobuf/util
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/field_mask_utility.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/field_mask_utility.cc.s
 .PHONY : src/google/protobuf/util/internal/field_mask_utility.cc.s
 
 src/google/protobuf/util/internal/json_escaping.o: src/google/protobuf/util/internal/json_escaping.cc.o
@@ -1803,7 +1803,7 @@ src/google/protobuf/util/internal/json_escaping.o: src/google/protobuf/util/inte
 
 # target to build an object file
 src/google/protobuf/util/internal/json_escaping.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.o
 .PHONY : src/google/protobuf/util/internal/json_escaping.cc.o
 
 src/google/protobuf/util/internal/json_escaping.i: src/google/protobuf/util/internal/json_escaping.cc.i
@@ -1812,7 +1812,7 @@ src/google/protobuf/util/internal/json_escaping.i: src/google/protobuf/util/inte
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/json_escaping.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.i
 .PHONY : src/google/protobuf/util/internal/json_escaping.cc.i
 
 src/google/protobuf/util/internal/json_escaping.s: src/google/protobuf/util/internal/json_escaping.cc.s
@@ -1821,7 +1821,7 @@ src/google/protobuf/util/internal/json_escaping.s: src/google/protobuf/util/inte
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/json_escaping.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_escaping.cc.s
 .PHONY : src/google/protobuf/util/internal/json_escaping.cc.s
 
 src/google/protobuf/util/internal/json_objectwriter.o: src/google/protobuf/util/internal/json_objectwriter.cc.o
@@ -1830,7 +1830,7 @@ src/google/protobuf/util/internal/json_objectwriter.o: src/google/protobuf/util/
 
 # target to build an object file
 src/google/protobuf/util/internal/json_objectwriter.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.o
 .PHONY : src/google/protobuf/util/internal/json_objectwriter.cc.o
 
 src/google/protobuf/util/internal/json_objectwriter.i: src/google/protobuf/util/internal/json_objectwriter.cc.i
@@ -1839,7 +1839,7 @@ src/google/protobuf/util/internal/json_objectwriter.i: src/google/protobuf/util/
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/json_objectwriter.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.i
 .PHONY : src/google/protobuf/util/internal/json_objectwriter.cc.i
 
 src/google/protobuf/util/internal/json_objectwriter.s: src/google/protobuf/util/internal/json_objectwriter.cc.s
@@ -1848,7 +1848,7 @@ src/google/protobuf/util/internal/json_objectwriter.s: src/google/protobuf/util/
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/json_objectwriter.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_objectwriter.cc.s
 .PHONY : src/google/protobuf/util/internal/json_objectwriter.cc.s
 
 src/google/protobuf/util/internal/json_stream_parser.o: src/google/protobuf/util/internal/json_stream_parser.cc.o
@@ -1857,7 +1857,7 @@ src/google/protobuf/util/internal/json_stream_parser.o: src/google/protobuf/util
 
 # target to build an object file
 src/google/protobuf/util/internal/json_stream_parser.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.o
 .PHONY : src/google/protobuf/util/internal/json_stream_parser.cc.o
 
 src/google/protobuf/util/internal/json_stream_parser.i: src/google/protobuf/util/internal/json_stream_parser.cc.i
@@ -1866,7 +1866,7 @@ src/google/protobuf/util/internal/json_stream_parser.i: src/google/protobuf/util
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/json_stream_parser.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.i
 .PHONY : src/google/protobuf/util/internal/json_stream_parser.cc.i
 
 src/google/protobuf/util/internal/json_stream_parser.s: src/google/protobuf/util/internal/json_stream_parser.cc.s
@@ -1875,7 +1875,7 @@ src/google/protobuf/util/internal/json_stream_parser.s: src/google/protobuf/util
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/json_stream_parser.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/json_stream_parser.cc.s
 .PHONY : src/google/protobuf/util/internal/json_stream_parser.cc.s
 
 src/google/protobuf/util/internal/object_writer.o: src/google/protobuf/util/internal/object_writer.cc.o
@@ -1884,7 +1884,7 @@ src/google/protobuf/util/internal/object_writer.o: src/google/protobuf/util/inte
 
 # target to build an object file
 src/google/protobuf/util/internal/object_writer.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.o
 .PHONY : src/google/protobuf/util/internal/object_writer.cc.o
 
 src/google/protobuf/util/internal/object_writer.i: src/google/protobuf/util/internal/object_writer.cc.i
@@ -1893,7 +1893,7 @@ src/google/protobuf/util/internal/object_writer.i: src/google/protobuf/util/inte
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/object_writer.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.i
 .PHONY : src/google/protobuf/util/internal/object_writer.cc.i
 
 src/google/protobuf/util/internal/object_writer.s: src/google/protobuf/util/internal/object_writer.cc.s
@@ -1902,7 +1902,7 @@ src/google/protobuf/util/internal/object_writer.s: src/google/protobuf/util/inte
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/object_writer.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/object_writer.cc.s
 .PHONY : src/google/protobuf/util/internal/object_writer.cc.s
 
 src/google/protobuf/util/internal/proto_writer.o: src/google/protobuf/util/internal/proto_writer.cc.o
@@ -1911,7 +1911,7 @@ src/google/protobuf/util/internal/proto_writer.o: src/google/protobuf/util/inter
 
 # target to build an object file
 src/google/protobuf/util/internal/proto_writer.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.o
 .PHONY : src/google/protobuf/util/internal/proto_writer.cc.o
 
 src/google/protobuf/util/internal/proto_writer.i: src/google/protobuf/util/internal/proto_writer.cc.i
@@ -1920,7 +1920,7 @@ src/google/protobuf/util/internal/proto_writer.i: src/google/protobuf/util/inter
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/proto_writer.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.i
 .PHONY : src/google/protobuf/util/internal/proto_writer.cc.i
 
 src/google/protobuf/util/internal/proto_writer.s: src/google/protobuf/util/internal/proto_writer.cc.s
@@ -1929,7 +1929,7 @@ src/google/protobuf/util/internal/proto_writer.s: src/google/protobuf/util/inter
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/proto_writer.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/proto_writer.cc.s
 .PHONY : src/google/protobuf/util/internal/proto_writer.cc.s
 
 src/google/protobuf/util/internal/protostream_objectsource.o: src/google/protobuf/util/internal/protostream_objectsource.cc.o
@@ -1938,7 +1938,7 @@ src/google/protobuf/util/internal/protostream_objectsource.o: src/google/protobu
 
 # target to build an object file
 src/google/protobuf/util/internal/protostream_objectsource.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.o
 .PHONY : src/google/protobuf/util/internal/protostream_objectsource.cc.o
 
 src/google/protobuf/util/internal/protostream_objectsource.i: src/google/protobuf/util/internal/protostream_objectsource.cc.i
@@ -1947,7 +1947,7 @@ src/google/protobuf/util/internal/protostream_objectsource.i: src/google/protobu
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/protostream_objectsource.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.i
 .PHONY : src/google/protobuf/util/internal/protostream_objectsource.cc.i
 
 src/google/protobuf/util/internal/protostream_objectsource.s: src/google/protobuf/util/internal/protostream_objectsource.cc.s
@@ -1956,7 +1956,7 @@ src/google/protobuf/util/internal/protostream_objectsource.s: src/google/protobu
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/protostream_objectsource.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectsource.cc.s
 .PHONY : src/google/protobuf/util/internal/protostream_objectsource.cc.s
 
 src/google/protobuf/util/internal/protostream_objectwriter.o: src/google/protobuf/util/internal/protostream_objectwriter.cc.o
@@ -1965,7 +1965,7 @@ src/google/protobuf/util/internal/protostream_objectwriter.o: src/google/protobu
 
 # target to build an object file
 src/google/protobuf/util/internal/protostream_objectwriter.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.o
 .PHONY : src/google/protobuf/util/internal/protostream_objectwriter.cc.o
 
 src/google/protobuf/util/internal/protostream_objectwriter.i: src/google/protobuf/util/internal/protostream_objectwriter.cc.i
@@ -1974,7 +1974,7 @@ src/google/protobuf/util/internal/protostream_objectwriter.i: src/google/protobu
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/protostream_objectwriter.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.i
 .PHONY : src/google/protobuf/util/internal/protostream_objectwriter.cc.i
 
 src/google/protobuf/util/internal/protostream_objectwriter.s: src/google/protobuf/util/internal/protostream_objectwriter.cc.s
@@ -1983,7 +1983,7 @@ src/google/protobuf/util/internal/protostream_objectwriter.s: src/google/protobu
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/protostream_objectwriter.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/protostream_objectwriter.cc.s
 .PHONY : src/google/protobuf/util/internal/protostream_objectwriter.cc.s
 
 src/google/protobuf/util/internal/type_info.o: src/google/protobuf/util/internal/type_info.cc.o
@@ -1992,7 +1992,7 @@ src/google/protobuf/util/internal/type_info.o: src/google/protobuf/util/internal
 
 # target to build an object file
 src/google/protobuf/util/internal/type_info.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.o
 .PHONY : src/google/protobuf/util/internal/type_info.cc.o
 
 src/google/protobuf/util/internal/type_info.i: src/google/protobuf/util/internal/type_info.cc.i
@@ -2001,7 +2001,7 @@ src/google/protobuf/util/internal/type_info.i: src/google/protobuf/util/internal
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/type_info.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.i
 .PHONY : src/google/protobuf/util/internal/type_info.cc.i
 
 src/google/protobuf/util/internal/type_info.s: src/google/protobuf/util/internal/type_info.cc.s
@@ -2010,7 +2010,7 @@ src/google/protobuf/util/internal/type_info.s: src/google/protobuf/util/internal
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/type_info.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/type_info.cc.s
 .PHONY : src/google/protobuf/util/internal/type_info.cc.s
 
 src/google/protobuf/util/internal/utility.o: src/google/protobuf/util/internal/utility.cc.o
@@ -2019,7 +2019,7 @@ src/google/protobuf/util/internal/utility.o: src/google/protobuf/util/internal/u
 
 # target to build an object file
 src/google/protobuf/util/internal/utility.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.o
 .PHONY : src/google/protobuf/util/internal/utility.cc.o
 
 src/google/protobuf/util/internal/utility.i: src/google/protobuf/util/internal/utility.cc.i
@@ -2028,7 +2028,7 @@ src/google/protobuf/util/internal/utility.i: src/google/protobuf/util/internal/u
 
 # target to preprocess a source file
 src/google/protobuf/util/internal/utility.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.i
 .PHONY : src/google/protobuf/util/internal/utility.cc.i
 
 src/google/protobuf/util/internal/utility.s: src/google/protobuf/util/internal/utility.cc.s
@@ -2037,7 +2037,7 @@ src/google/protobuf/util/internal/utility.s: src/google/protobuf/util/internal/u
 
 # target to generate assembly for a file
 src/google/protobuf/util/internal/utility.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/internal/utility.cc.s
 .PHONY : src/google/protobuf/util/internal/utility.cc.s
 
 src/google/protobuf/util/json_util.o: src/google/protobuf/util/json_util.cc.o
@@ -2046,7 +2046,7 @@ src/google/protobuf/util/json_util.o: src/google/protobuf/util/json_util.cc.o
 
 # target to build an object file
 src/google/protobuf/util/json_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.o
 .PHONY : src/google/protobuf/util/json_util.cc.o
 
 src/google/protobuf/util/json_util.i: src/google/protobuf/util/json_util.cc.i
@@ -2055,7 +2055,7 @@ src/google/protobuf/util/json_util.i: src/google/protobuf/util/json_util.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/util/json_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.i
 .PHONY : src/google/protobuf/util/json_util.cc.i
 
 src/google/protobuf/util/json_util.s: src/google/protobuf/util/json_util.cc.s
@@ -2064,7 +2064,7 @@ src/google/protobuf/util/json_util.s: src/google/protobuf/util/json_util.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/util/json_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/json_util.cc.s
 .PHONY : src/google/protobuf/util/json_util.cc.s
 
 src/google/protobuf/util/message_differencer.o: src/google/protobuf/util/message_differencer.cc.o
@@ -2073,7 +2073,7 @@ src/google/protobuf/util/message_differencer.o: src/google/protobuf/util/message
 
 # target to build an object file
 src/google/protobuf/util/message_differencer.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.o
 .PHONY : src/google/protobuf/util/message_differencer.cc.o
 
 src/google/protobuf/util/message_differencer.i: src/google/protobuf/util/message_differencer.cc.i
@@ -2082,7 +2082,7 @@ src/google/protobuf/util/message_differencer.i: src/google/protobuf/util/message
 
 # target to preprocess a source file
 src/google/protobuf/util/message_differencer.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.i
 .PHONY : src/google/protobuf/util/message_differencer.cc.i
 
 src/google/protobuf/util/message_differencer.s: src/google/protobuf/util/message_differencer.cc.s
@@ -2091,7 +2091,7 @@ src/google/protobuf/util/message_differencer.s: src/google/protobuf/util/message
 
 # target to generate assembly for a file
 src/google/protobuf/util/message_differencer.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/message_differencer.cc.s
 .PHONY : src/google/protobuf/util/message_differencer.cc.s
 
 src/google/protobuf/util/time_util.o: src/google/protobuf/util/time_util.cc.o
@@ -2100,7 +2100,7 @@ src/google/protobuf/util/time_util.o: src/google/protobuf/util/time_util.cc.o
 
 # target to build an object file
 src/google/protobuf/util/time_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.o
 .PHONY : src/google/protobuf/util/time_util.cc.o
 
 src/google/protobuf/util/time_util.i: src/google/protobuf/util/time_util.cc.i
@@ -2109,7 +2109,7 @@ src/google/protobuf/util/time_util.i: src/google/protobuf/util/time_util.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/util/time_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.i
 .PHONY : src/google/protobuf/util/time_util.cc.i
 
 src/google/protobuf/util/time_util.s: src/google/protobuf/util/time_util.cc.s
@@ -2118,7 +2118,7 @@ src/google/protobuf/util/time_util.s: src/google/protobuf/util/time_util.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/util/time_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/time_util.cc.s
 .PHONY : src/google/protobuf/util/time_util.cc.s
 
 src/google/protobuf/util/type_resolver_util.o: src/google/protobuf/util/type_resolver_util.cc.o
@@ -2127,7 +2127,7 @@ src/google/protobuf/util/type_resolver_util.o: src/google/protobuf/util/type_res
 
 # target to build an object file
 src/google/protobuf/util/type_resolver_util.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.o
 .PHONY : src/google/protobuf/util/type_resolver_util.cc.o
 
 src/google/protobuf/util/type_resolver_util.i: src/google/protobuf/util/type_resolver_util.cc.i
@@ -2136,7 +2136,7 @@ src/google/protobuf/util/type_resolver_util.i: src/google/protobuf/util/type_res
 
 # target to preprocess a source file
 src/google/protobuf/util/type_resolver_util.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.i
 .PHONY : src/google/protobuf/util/type_resolver_util.cc.i
 
 src/google/protobuf/util/type_resolver_util.s: src/google/protobuf/util/type_resolver_util.cc.s
@@ -2145,7 +2145,7 @@ src/google/protobuf/util/type_resolver_util.s: src/google/protobuf/util/type_res
 
 # target to generate assembly for a file
 src/google/protobuf/util/type_resolver_util.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/util/type_resolver_util.cc.s
 .PHONY : src/google/protobuf/util/type_resolver_util.cc.s
 
 src/google/protobuf/wire_format.o: src/google/protobuf/wire_format.cc.o
@@ -2154,7 +2154,7 @@ src/google/protobuf/wire_format.o: src/google/protobuf/wire_format.cc.o
 
 # target to build an object file
 src/google/protobuf/wire_format.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.o
 .PHONY : src/google/protobuf/wire_format.cc.o
 
 src/google/protobuf/wire_format.i: src/google/protobuf/wire_format.cc.i
@@ -2163,7 +2163,7 @@ src/google/protobuf/wire_format.i: src/google/protobuf/wire_format.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/wire_format.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.i
 .PHONY : src/google/protobuf/wire_format.cc.i
 
 src/google/protobuf/wire_format.s: src/google/protobuf/wire_format.cc.s
@@ -2172,7 +2172,7 @@ src/google/protobuf/wire_format.s: src/google/protobuf/wire_format.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/wire_format.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format.cc.s
 .PHONY : src/google/protobuf/wire_format.cc.s
 
 src/google/protobuf/wire_format_lite.o: src/google/protobuf/wire_format_lite.cc.o
@@ -2181,7 +2181,7 @@ src/google/protobuf/wire_format_lite.o: src/google/protobuf/wire_format_lite.cc.
 
 # target to build an object file
 src/google/protobuf/wire_format_lite.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.o
 .PHONY : src/google/protobuf/wire_format_lite.cc.o
 
 src/google/protobuf/wire_format_lite.i: src/google/protobuf/wire_format_lite.cc.i
@@ -2190,7 +2190,7 @@ src/google/protobuf/wire_format_lite.i: src/google/protobuf/wire_format_lite.cc.
 
 # target to preprocess a source file
 src/google/protobuf/wire_format_lite.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.i
 .PHONY : src/google/protobuf/wire_format_lite.cc.i
 
 src/google/protobuf/wire_format_lite.s: src/google/protobuf/wire_format_lite.cc.s
@@ -2199,7 +2199,7 @@ src/google/protobuf/wire_format_lite.s: src/google/protobuf/wire_format_lite.cc.
 
 # target to generate assembly for a file
 src/google/protobuf/wire_format_lite.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wire_format_lite.cc.s
 .PHONY : src/google/protobuf/wire_format_lite.cc.s
 
 src/google/protobuf/wrappers.pb.o: src/google/protobuf/wrappers.pb.cc.o
@@ -2208,7 +2208,7 @@ src/google/protobuf/wrappers.pb.o: src/google/protobuf/wrappers.pb.cc.o
 
 # target to build an object file
 src/google/protobuf/wrappers.pb.cc.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.o
 .PHONY : src/google/protobuf/wrappers.pb.cc.o
 
 src/google/protobuf/wrappers.pb.i: src/google/protobuf/wrappers.pb.cc.i
@@ -2217,7 +2217,7 @@ src/google/protobuf/wrappers.pb.i: src/google/protobuf/wrappers.pb.cc.i
 
 # target to preprocess a source file
 src/google/protobuf/wrappers.pb.cc.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.i
 .PHONY : src/google/protobuf/wrappers.pb.cc.i
 
 src/google/protobuf/wrappers.pb.s: src/google/protobuf/wrappers.pb.cc.s
@@ -2226,7 +2226,7 @@ src/google/protobuf/wrappers.pb.s: src/google/protobuf/wrappers.pb.cc.s
 
 # target to generate assembly for a file
 src/google/protobuf/wrappers.pb.cc.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/build.make 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/wrappers.pb.cc.s
 .PHONY : src/google/protobuf/wrappers.pb.cc.s
 
 # Help Target
@@ -2481,6 +2481,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

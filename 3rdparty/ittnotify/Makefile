@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/cmake-3.13/bin/cmake
+CMAKE_COMMAND = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/cmake-3.13/bin/cmake -E remove -f
+RM = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/opencv-master
+CMAKE_SOURCE_DIR = /home/opencv-3.4.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/opencv-master/build
+CMAKE_BINARY_DIR = /home/opencv-3.4.2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,30 +59,30 @@ CMAKE_BINARY_DIR = /home/opencv-master/build
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"java\" \"libs\" \"licenses\" \"python\" \"scripts\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"libs\" \"licenses\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -93,7 +93,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -104,7 +104,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-master/build/CPackSourceConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-3.4.2/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -115,19 +115,19 @@ package_source/fast: package_source
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/cmake-3.13/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -138,7 +138,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/cmake-3.13/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -149,7 +149,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/cmake-3.13/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -159,14 +159,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles /home/opencv-master/build/3rdparty/ittnotify/CMakeFiles/progress.marks
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles /home/opencv-3.4.2/build/3rdparty/ittnotify/CMakeFiles/progress.marks
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/clean
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/rule:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/rule
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/rule
 .PHONY : 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ ittnotify: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/rule
 
 # fast build rule for target.
 ittnotify/fast:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build
 .PHONY : ittnotify/fast
 
 src/ittnotify/ittnotify_static.o: src/ittnotify/ittnotify_static.c.o
@@ -210,7 +210,7 @@ src/ittnotify/ittnotify_static.o: src/ittnotify/ittnotify_static.c.o
 
 # target to build an object file
 src/ittnotify/ittnotify_static.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o
 .PHONY : src/ittnotify/ittnotify_static.c.o
 
 src/ittnotify/ittnotify_static.i: src/ittnotify/ittnotify_static.c.i
@@ -219,7 +219,7 @@ src/ittnotify/ittnotify_static.i: src/ittnotify/ittnotify_static.c.i
 
 # target to preprocess a source file
 src/ittnotify/ittnotify_static.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i
 .PHONY : src/ittnotify/ittnotify_static.c.i
 
 src/ittnotify/ittnotify_static.s: src/ittnotify/ittnotify_static.c.s
@@ -228,7 +228,7 @@ src/ittnotify/ittnotify_static.s: src/ittnotify/ittnotify_static.c.s
 
 # target to generate assembly for a file
 src/ittnotify/ittnotify_static.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s
 .PHONY : src/ittnotify/ittnotify_static.c.s
 
 src/ittnotify/jitprofiling.o: src/ittnotify/jitprofiling.c.o
@@ -237,7 +237,7 @@ src/ittnotify/jitprofiling.o: src/ittnotify/jitprofiling.c.o
 
 # target to build an object file
 src/ittnotify/jitprofiling.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o
 .PHONY : src/ittnotify/jitprofiling.c.o
 
 src/ittnotify/jitprofiling.i: src/ittnotify/jitprofiling.c.i
@@ -246,7 +246,7 @@ src/ittnotify/jitprofiling.i: src/ittnotify/jitprofiling.c.i
 
 # target to preprocess a source file
 src/ittnotify/jitprofiling.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i
 .PHONY : src/ittnotify/jitprofiling.c.i
 
 src/ittnotify/jitprofiling.s: src/ittnotify/jitprofiling.c.s
@@ -255,7 +255,7 @@ src/ittnotify/jitprofiling.s: src/ittnotify/jitprofiling.c.s
 
 # target to generate assembly for a file
 src/ittnotify/jitprofiling.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s
 .PHONY : src/ittnotify/jitprofiling.c.s
 
 # Help Target
@@ -291,6 +291,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

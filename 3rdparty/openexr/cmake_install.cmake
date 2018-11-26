@@ -1,4 +1,4 @@
-# Install script for directory: /home/opencv-master/3rdparty/openexr
+# Install script for directory: /home/opencv-3.4.2/3rdparty/openexr
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "Release")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,22 +38,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/opencv4/3rdparty" TYPE STATIC_LIBRARY FILES "/home/opencv-master/build/3rdparty/lib/libIlmImf.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/OpenCV/3rdparty/lib" TYPE STATIC_LIBRARY FILES "/home/opencv-3.4.2/build/3rdparty/lib/libIlmImf.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlicensesx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/opencv4" TYPE FILE OPTIONAL RENAME "openexr-LICENSE" FILES "/home/opencv-master/3rdparty/openexr/LICENSE")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/OpenCV/licenses" TYPE FILE OPTIONAL RENAME "openexr-LICENSE" FILES "/home/opencv-3.4.2/3rdparty/openexr/LICENSE")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlicensesx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/opencv4" TYPE FILE OPTIONAL RENAME "openexr-AUTHORS.ilmbase" FILES "/home/opencv-master/3rdparty/openexr/AUTHORS.ilmbase")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/OpenCV/licenses" TYPE FILE OPTIONAL RENAME "openexr-AUTHORS.ilmbase" FILES "/home/opencv-3.4.2/3rdparty/openexr/AUTHORS.ilmbase")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlicensesx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/opencv4" TYPE FILE OPTIONAL RENAME "openexr-AUTHORS.openexr" FILES "/home/opencv-master/3rdparty/openexr/AUTHORS.openexr")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/OpenCV/licenses" TYPE FILE OPTIONAL RENAME "openexr-AUTHORS.openexr" FILES "/home/opencv-3.4.2/3rdparty/openexr/AUTHORS.openexr")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlicensesx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/opencv4" TYPE FILE OPTIONAL RENAME "openexr-fix_msvc2013_errors.patch" FILES "/home/opencv-master/3rdparty/openexr/fix_msvc2013_errors.patch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/OpenCV/licenses" TYPE FILE OPTIONAL RENAME "openexr-fix_msvc2013_errors.patch" FILES "/home/opencv-3.4.2/3rdparty/openexr/fix_msvc2013_errors.patch")
 endif()
 

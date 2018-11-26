@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/cmake-3.13/bin/cmake
+CMAKE_COMMAND = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/cmake-3.13/bin/cmake -E remove -f
+RM = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/opencv-master
+CMAKE_SOURCE_DIR = /home/opencv-3.4.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/opencv-master/build
+CMAKE_BINARY_DIR = /home/opencv-3.4.2/build
 
 # Include any dependencies generated for this target.
 include 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/depend.make
@@ -59,29 +59,29 @@ include 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/flags.make
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/flags.make
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o: ../3rdparty/ittnotify/src/ittnotify/ittnotify_static.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opencv-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o   -c /home/opencv-master/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opencv-3.4.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o"
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.o   -c /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opencv-master/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c > CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c > CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.i
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opencv-master/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c -o CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/ittnotify_static.c -o CMakeFiles/ittnotify.dir/src/ittnotify/ittnotify_static.c.s
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/flags.make
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o: ../3rdparty/ittnotify/src/ittnotify/jitprofiling.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opencv-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o   -c /home/opencv-master/3rdparty/ittnotify/src/ittnotify/jitprofiling.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opencv-3.4.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o"
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o   -c /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/jitprofiling.c
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opencv-master/3rdparty/ittnotify/src/ittnotify/jitprofiling.c > CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/jitprofiling.c > CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.i
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s"
-	cd /home/opencv-master/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opencv-master/3rdparty/ittnotify/src/ittnotify/jitprofiling.c -o CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opencv-3.4.2/3rdparty/ittnotify/src/ittnotify/jitprofiling.c -o CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.s
 
 # Object files for target ittnotify
 ittnotify_OBJECTS = \
@@ -95,9 +95,9 @@ ittnotify_EXTERNAL_OBJECTS =
 3rdparty/lib/libittnotify.a: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/src/ittnotify/jitprofiling.c.o
 3rdparty/lib/libittnotify.a: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build.make
 3rdparty/lib/libittnotify.a: 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/opencv-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library ../lib/libittnotify.a"
-	cd /home/opencv-master/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -P CMakeFiles/ittnotify.dir/cmake_clean_target.cmake
-	cd /home/opencv-master/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ittnotify.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/opencv-3.4.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library ../lib/libittnotify.a"
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -P CMakeFiles/ittnotify.dir/cmake_clean_target.cmake
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ittnotify.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build: 3rdparty/lib/libittnotify.a
@@ -105,10 +105,10 @@ ittnotify_EXTERNAL_OBJECTS =
 .PHONY : 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/build
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/clean:
-	cd /home/opencv-master/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -P CMakeFiles/ittnotify.dir/cmake_clean.cmake
+	cd /home/opencv-3.4.2/build/3rdparty/ittnotify && $(CMAKE_COMMAND) -P CMakeFiles/ittnotify.dir/cmake_clean.cmake
 .PHONY : 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/clean
 
 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/depend:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/opencv-master /home/opencv-master/3rdparty/ittnotify /home/opencv-master/build /home/opencv-master/build/3rdparty/ittnotify /home/opencv-master/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/opencv-3.4.2 /home/opencv-3.4.2/3rdparty/ittnotify /home/opencv-3.4.2/build /home/opencv-3.4.2/build/3rdparty/ittnotify /home/opencv-3.4.2/build/3rdparty/ittnotify/CMakeFiles/ittnotify.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 3rdparty/ittnotify/CMakeFiles/ittnotify.dir/depend
 

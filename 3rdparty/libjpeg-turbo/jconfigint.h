@@ -1,5 +1,5 @@
 #define VERSION "1.5.3"
-#define BUILD "opencv-4.0.0-dev-libjpeg-turbo-debug"
+#define BUILD "opencv-3.4.2-libjpeg-turbo"
 #define PACKAGE_NAME "OpenCV"
 
 #ifndef INLINE

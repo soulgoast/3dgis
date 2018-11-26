@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/cmake-3.13/bin/cmake
+CMAKE_COMMAND = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/cmake-3.13/bin/cmake -E remove -f
+RM = /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/opencv-master
+CMAKE_SOURCE_DIR = /home/opencv-3.4.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/opencv-master/build
+CMAKE_BINARY_DIR = /home/opencv-3.4.2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,30 +59,30 @@ CMAKE_BINARY_DIR = /home/opencv-master/build
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/cmake-3.13/bin/cmake -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"java\" \"libs\" \"licenses\" \"python\" \"scripts\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"dev\" \"libs\" \"licenses\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -93,7 +93,7 @@ list_install_components/fast: list_install_components
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -104,7 +104,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/opencv-master/build && /home/cmake-3.13/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-master/build/CPackSourceConfig.cmake
+	cd /home/opencv-3.4.2/build && /usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cpack --config ./CPackSourceConfig.cmake /home/opencv-3.4.2/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -115,7 +115,7 @@ package_source/fast: package_source
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/cmake-3.13/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -126,19 +126,19 @@ edit_cache/fast: edit_cache
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/cmake-3.13/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/cmake-3.13/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -149,7 +149,7 @@ test/fast: test
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/cmake-3.13/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/cmake-3.13.0-rc3-Linux-x86_64/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -159,14 +159,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles /home/opencv-master/build/3rdparty/ippiw/CMakeFiles/progress.marks
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-master/build/CMakeFiles 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles /home/opencv-3.4.2/build/3rdparty/ippiw/CMakeFiles/progress.marks
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/opencv-3.4.2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/clean
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/preinstall
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 3rdparty/ippiw/CMakeFiles/ippiw.dir/rule:
-	cd /home/opencv-master/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/CMakeFiles/ippiw.dir/rule
+	cd /home/opencv-3.4.2/build && $(MAKE) -f CMakeFiles/Makefile2 3rdparty/ippiw/CMakeFiles/ippiw.dir/rule
 .PHONY : 3rdparty/ippiw/CMakeFiles/ippiw.dir/rule
 
 # Convenience name for target.
@@ -201,7 +201,7 @@ ippiw: 3rdparty/ippiw/CMakeFiles/ippiw.dir/rule
 
 # fast build rule for target.
 ippiw/fast:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/build
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/build
 .PHONY : ippiw/fast
 
 src/iw_core.o: src/iw_core.c.o
@@ -210,7 +210,7 @@ src/iw_core.o: src/iw_core.c.o
 
 # target to build an object file
 src/iw_core.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.o
 .PHONY : src/iw_core.c.o
 
 src/iw_core.i: src/iw_core.c.i
@@ -219,7 +219,7 @@ src/iw_core.i: src/iw_core.c.i
 
 # target to preprocess a source file
 src/iw_core.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.i
 .PHONY : src/iw_core.c.i
 
 src/iw_core.s: src/iw_core.c.s
@@ -228,7 +228,7 @@ src/iw_core.s: src/iw_core.c.s
 
 # target to generate assembly for a file
 src/iw_core.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_core.c.s
 .PHONY : src/iw_core.c.s
 
 src/iw_image.o: src/iw_image.c.o
@@ -237,7 +237,7 @@ src/iw_image.o: src/iw_image.c.o
 
 # target to build an object file
 src/iw_image.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.o
 .PHONY : src/iw_image.c.o
 
 src/iw_image.i: src/iw_image.c.i
@@ -246,7 +246,7 @@ src/iw_image.i: src/iw_image.c.i
 
 # target to preprocess a source file
 src/iw_image.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.i
 .PHONY : src/iw_image.c.i
 
 src/iw_image.s: src/iw_image.c.s
@@ -255,7 +255,7 @@ src/iw_image.s: src/iw_image.c.s
 
 # target to generate assembly for a file
 src/iw_image.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image.c.s
 .PHONY : src/iw_image.c.s
 
 src/iw_image_color_convert_all.o: src/iw_image_color_convert_all.c.o
@@ -264,7 +264,7 @@ src/iw_image_color_convert_all.o: src/iw_image_color_convert_all.c.o
 
 # target to build an object file
 src/iw_image_color_convert_all.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.o
 .PHONY : src/iw_image_color_convert_all.c.o
 
 src/iw_image_color_convert_all.i: src/iw_image_color_convert_all.c.i
@@ -273,7 +273,7 @@ src/iw_image_color_convert_all.i: src/iw_image_color_convert_all.c.i
 
 # target to preprocess a source file
 src/iw_image_color_convert_all.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.i
 .PHONY : src/iw_image_color_convert_all.c.i
 
 src/iw_image_color_convert_all.s: src/iw_image_color_convert_all.c.s
@@ -282,7 +282,7 @@ src/iw_image_color_convert_all.s: src/iw_image_color_convert_all.c.s
 
 # target to generate assembly for a file
 src/iw_image_color_convert_all.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_all.c.s
 .PHONY : src/iw_image_color_convert_all.c.s
 
 src/iw_image_color_convert_rgbs.o: src/iw_image_color_convert_rgbs.c.o
@@ -291,7 +291,7 @@ src/iw_image_color_convert_rgbs.o: src/iw_image_color_convert_rgbs.c.o
 
 # target to build an object file
 src/iw_image_color_convert_rgbs.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.o
 .PHONY : src/iw_image_color_convert_rgbs.c.o
 
 src/iw_image_color_convert_rgbs.i: src/iw_image_color_convert_rgbs.c.i
@@ -300,7 +300,7 @@ src/iw_image_color_convert_rgbs.i: src/iw_image_color_convert_rgbs.c.i
 
 # target to preprocess a source file
 src/iw_image_color_convert_rgbs.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.i
 .PHONY : src/iw_image_color_convert_rgbs.c.i
 
 src/iw_image_color_convert_rgbs.s: src/iw_image_color_convert_rgbs.c.s
@@ -309,7 +309,7 @@ src/iw_image_color_convert_rgbs.s: src/iw_image_color_convert_rgbs.c.s
 
 # target to generate assembly for a file
 src/iw_image_color_convert_rgbs.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_color_convert_rgbs.c.s
 .PHONY : src/iw_image_color_convert_rgbs.c.s
 
 src/iw_image_filter_bilateral.o: src/iw_image_filter_bilateral.c.o
@@ -318,7 +318,7 @@ src/iw_image_filter_bilateral.o: src/iw_image_filter_bilateral.c.o
 
 # target to build an object file
 src/iw_image_filter_bilateral.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.o
 .PHONY : src/iw_image_filter_bilateral.c.o
 
 src/iw_image_filter_bilateral.i: src/iw_image_filter_bilateral.c.i
@@ -327,7 +327,7 @@ src/iw_image_filter_bilateral.i: src/iw_image_filter_bilateral.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_bilateral.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.i
 .PHONY : src/iw_image_filter_bilateral.c.i
 
 src/iw_image_filter_bilateral.s: src/iw_image_filter_bilateral.c.s
@@ -336,7 +336,7 @@ src/iw_image_filter_bilateral.s: src/iw_image_filter_bilateral.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_bilateral.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_bilateral.c.s
 .PHONY : src/iw_image_filter_bilateral.c.s
 
 src/iw_image_filter_box.o: src/iw_image_filter_box.c.o
@@ -345,7 +345,7 @@ src/iw_image_filter_box.o: src/iw_image_filter_box.c.o
 
 # target to build an object file
 src/iw_image_filter_box.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.o
 .PHONY : src/iw_image_filter_box.c.o
 
 src/iw_image_filter_box.i: src/iw_image_filter_box.c.i
@@ -354,7 +354,7 @@ src/iw_image_filter_box.i: src/iw_image_filter_box.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_box.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.i
 .PHONY : src/iw_image_filter_box.c.i
 
 src/iw_image_filter_box.s: src/iw_image_filter_box.c.s
@@ -363,7 +363,7 @@ src/iw_image_filter_box.s: src/iw_image_filter_box.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_box.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_box.c.s
 .PHONY : src/iw_image_filter_box.c.s
 
 src/iw_image_filter_canny.o: src/iw_image_filter_canny.c.o
@@ -372,7 +372,7 @@ src/iw_image_filter_canny.o: src/iw_image_filter_canny.c.o
 
 # target to build an object file
 src/iw_image_filter_canny.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.o
 .PHONY : src/iw_image_filter_canny.c.o
 
 src/iw_image_filter_canny.i: src/iw_image_filter_canny.c.i
@@ -381,7 +381,7 @@ src/iw_image_filter_canny.i: src/iw_image_filter_canny.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_canny.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.i
 .PHONY : src/iw_image_filter_canny.c.i
 
 src/iw_image_filter_canny.s: src/iw_image_filter_canny.c.s
@@ -390,7 +390,7 @@ src/iw_image_filter_canny.s: src/iw_image_filter_canny.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_canny.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_canny.c.s
 .PHONY : src/iw_image_filter_canny.c.s
 
 src/iw_image_filter_gaussian.o: src/iw_image_filter_gaussian.c.o
@@ -399,7 +399,7 @@ src/iw_image_filter_gaussian.o: src/iw_image_filter_gaussian.c.o
 
 # target to build an object file
 src/iw_image_filter_gaussian.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.o
 .PHONY : src/iw_image_filter_gaussian.c.o
 
 src/iw_image_filter_gaussian.i: src/iw_image_filter_gaussian.c.i
@@ -408,7 +408,7 @@ src/iw_image_filter_gaussian.i: src/iw_image_filter_gaussian.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_gaussian.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.i
 .PHONY : src/iw_image_filter_gaussian.c.i
 
 src/iw_image_filter_gaussian.s: src/iw_image_filter_gaussian.c.s
@@ -417,7 +417,7 @@ src/iw_image_filter_gaussian.s: src/iw_image_filter_gaussian.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_gaussian.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_gaussian.c.s
 .PHONY : src/iw_image_filter_gaussian.c.s
 
 src/iw_image_filter_general.o: src/iw_image_filter_general.c.o
@@ -426,7 +426,7 @@ src/iw_image_filter_general.o: src/iw_image_filter_general.c.o
 
 # target to build an object file
 src/iw_image_filter_general.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.o
 .PHONY : src/iw_image_filter_general.c.o
 
 src/iw_image_filter_general.i: src/iw_image_filter_general.c.i
@@ -435,7 +435,7 @@ src/iw_image_filter_general.i: src/iw_image_filter_general.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_general.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.i
 .PHONY : src/iw_image_filter_general.c.i
 
 src/iw_image_filter_general.s: src/iw_image_filter_general.c.s
@@ -444,7 +444,7 @@ src/iw_image_filter_general.s: src/iw_image_filter_general.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_general.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_general.c.s
 .PHONY : src/iw_image_filter_general.c.s
 
 src/iw_image_filter_laplacian.o: src/iw_image_filter_laplacian.c.o
@@ -453,7 +453,7 @@ src/iw_image_filter_laplacian.o: src/iw_image_filter_laplacian.c.o
 
 # target to build an object file
 src/iw_image_filter_laplacian.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.o
 .PHONY : src/iw_image_filter_laplacian.c.o
 
 src/iw_image_filter_laplacian.i: src/iw_image_filter_laplacian.c.i
@@ -462,7 +462,7 @@ src/iw_image_filter_laplacian.i: src/iw_image_filter_laplacian.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_laplacian.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.i
 .PHONY : src/iw_image_filter_laplacian.c.i
 
 src/iw_image_filter_laplacian.s: src/iw_image_filter_laplacian.c.s
@@ -471,7 +471,7 @@ src/iw_image_filter_laplacian.s: src/iw_image_filter_laplacian.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_laplacian.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_laplacian.c.s
 .PHONY : src/iw_image_filter_laplacian.c.s
 
 src/iw_image_filter_morphology.o: src/iw_image_filter_morphology.c.o
@@ -480,7 +480,7 @@ src/iw_image_filter_morphology.o: src/iw_image_filter_morphology.c.o
 
 # target to build an object file
 src/iw_image_filter_morphology.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.o
 .PHONY : src/iw_image_filter_morphology.c.o
 
 src/iw_image_filter_morphology.i: src/iw_image_filter_morphology.c.i
@@ -489,7 +489,7 @@ src/iw_image_filter_morphology.i: src/iw_image_filter_morphology.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_morphology.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.i
 .PHONY : src/iw_image_filter_morphology.c.i
 
 src/iw_image_filter_morphology.s: src/iw_image_filter_morphology.c.s
@@ -498,7 +498,7 @@ src/iw_image_filter_morphology.s: src/iw_image_filter_morphology.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_morphology.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_morphology.c.s
 .PHONY : src/iw_image_filter_morphology.c.s
 
 src/iw_image_filter_scharr.o: src/iw_image_filter_scharr.c.o
@@ -507,7 +507,7 @@ src/iw_image_filter_scharr.o: src/iw_image_filter_scharr.c.o
 
 # target to build an object file
 src/iw_image_filter_scharr.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.o
 .PHONY : src/iw_image_filter_scharr.c.o
 
 src/iw_image_filter_scharr.i: src/iw_image_filter_scharr.c.i
@@ -516,7 +516,7 @@ src/iw_image_filter_scharr.i: src/iw_image_filter_scharr.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_scharr.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.i
 .PHONY : src/iw_image_filter_scharr.c.i
 
 src/iw_image_filter_scharr.s: src/iw_image_filter_scharr.c.s
@@ -525,7 +525,7 @@ src/iw_image_filter_scharr.s: src/iw_image_filter_scharr.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_scharr.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_scharr.c.s
 .PHONY : src/iw_image_filter_scharr.c.s
 
 src/iw_image_filter_sobel.o: src/iw_image_filter_sobel.c.o
@@ -534,7 +534,7 @@ src/iw_image_filter_sobel.o: src/iw_image_filter_sobel.c.o
 
 # target to build an object file
 src/iw_image_filter_sobel.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.o
 .PHONY : src/iw_image_filter_sobel.c.o
 
 src/iw_image_filter_sobel.i: src/iw_image_filter_sobel.c.i
@@ -543,7 +543,7 @@ src/iw_image_filter_sobel.i: src/iw_image_filter_sobel.c.i
 
 # target to preprocess a source file
 src/iw_image_filter_sobel.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.i
 .PHONY : src/iw_image_filter_sobel.c.i
 
 src/iw_image_filter_sobel.s: src/iw_image_filter_sobel.c.s
@@ -552,7 +552,7 @@ src/iw_image_filter_sobel.s: src/iw_image_filter_sobel.c.s
 
 # target to generate assembly for a file
 src/iw_image_filter_sobel.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_filter_sobel.c.s
 .PHONY : src/iw_image_filter_sobel.c.s
 
 src/iw_image_op_copy.o: src/iw_image_op_copy.c.o
@@ -561,7 +561,7 @@ src/iw_image_op_copy.o: src/iw_image_op_copy.c.o
 
 # target to build an object file
 src/iw_image_op_copy.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.o
 .PHONY : src/iw_image_op_copy.c.o
 
 src/iw_image_op_copy.i: src/iw_image_op_copy.c.i
@@ -570,7 +570,7 @@ src/iw_image_op_copy.i: src/iw_image_op_copy.c.i
 
 # target to preprocess a source file
 src/iw_image_op_copy.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.i
 .PHONY : src/iw_image_op_copy.c.i
 
 src/iw_image_op_copy.s: src/iw_image_op_copy.c.s
@@ -579,7 +579,7 @@ src/iw_image_op_copy.s: src/iw_image_op_copy.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_copy.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy.c.s
 .PHONY : src/iw_image_op_copy.c.s
 
 src/iw_image_op_copy_channel.o: src/iw_image_op_copy_channel.c.o
@@ -588,7 +588,7 @@ src/iw_image_op_copy_channel.o: src/iw_image_op_copy_channel.c.o
 
 # target to build an object file
 src/iw_image_op_copy_channel.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.o
 .PHONY : src/iw_image_op_copy_channel.c.o
 
 src/iw_image_op_copy_channel.i: src/iw_image_op_copy_channel.c.i
@@ -597,7 +597,7 @@ src/iw_image_op_copy_channel.i: src/iw_image_op_copy_channel.c.i
 
 # target to preprocess a source file
 src/iw_image_op_copy_channel.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.i
 .PHONY : src/iw_image_op_copy_channel.c.i
 
 src/iw_image_op_copy_channel.s: src/iw_image_op_copy_channel.c.s
@@ -606,7 +606,7 @@ src/iw_image_op_copy_channel.s: src/iw_image_op_copy_channel.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_copy_channel.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_channel.c.s
 .PHONY : src/iw_image_op_copy_channel.c.s
 
 src/iw_image_op_copy_make_border.o: src/iw_image_op_copy_make_border.c.o
@@ -615,7 +615,7 @@ src/iw_image_op_copy_make_border.o: src/iw_image_op_copy_make_border.c.o
 
 # target to build an object file
 src/iw_image_op_copy_make_border.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.o
 .PHONY : src/iw_image_op_copy_make_border.c.o
 
 src/iw_image_op_copy_make_border.i: src/iw_image_op_copy_make_border.c.i
@@ -624,7 +624,7 @@ src/iw_image_op_copy_make_border.i: src/iw_image_op_copy_make_border.c.i
 
 # target to preprocess a source file
 src/iw_image_op_copy_make_border.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.i
 .PHONY : src/iw_image_op_copy_make_border.c.i
 
 src/iw_image_op_copy_make_border.s: src/iw_image_op_copy_make_border.c.s
@@ -633,7 +633,7 @@ src/iw_image_op_copy_make_border.s: src/iw_image_op_copy_make_border.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_copy_make_border.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_make_border.c.s
 .PHONY : src/iw_image_op_copy_make_border.c.s
 
 src/iw_image_op_copy_merge.o: src/iw_image_op_copy_merge.c.o
@@ -642,7 +642,7 @@ src/iw_image_op_copy_merge.o: src/iw_image_op_copy_merge.c.o
 
 # target to build an object file
 src/iw_image_op_copy_merge.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.o
 .PHONY : src/iw_image_op_copy_merge.c.o
 
 src/iw_image_op_copy_merge.i: src/iw_image_op_copy_merge.c.i
@@ -651,7 +651,7 @@ src/iw_image_op_copy_merge.i: src/iw_image_op_copy_merge.c.i
 
 # target to preprocess a source file
 src/iw_image_op_copy_merge.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.i
 .PHONY : src/iw_image_op_copy_merge.c.i
 
 src/iw_image_op_copy_merge.s: src/iw_image_op_copy_merge.c.s
@@ -660,7 +660,7 @@ src/iw_image_op_copy_merge.s: src/iw_image_op_copy_merge.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_copy_merge.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_merge.c.s
 .PHONY : src/iw_image_op_copy_merge.c.s
 
 src/iw_image_op_copy_split.o: src/iw_image_op_copy_split.c.o
@@ -669,7 +669,7 @@ src/iw_image_op_copy_split.o: src/iw_image_op_copy_split.c.o
 
 # target to build an object file
 src/iw_image_op_copy_split.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.o
 .PHONY : src/iw_image_op_copy_split.c.o
 
 src/iw_image_op_copy_split.i: src/iw_image_op_copy_split.c.i
@@ -678,7 +678,7 @@ src/iw_image_op_copy_split.i: src/iw_image_op_copy_split.c.i
 
 # target to preprocess a source file
 src/iw_image_op_copy_split.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.i
 .PHONY : src/iw_image_op_copy_split.c.i
 
 src/iw_image_op_copy_split.s: src/iw_image_op_copy_split.c.s
@@ -687,7 +687,7 @@ src/iw_image_op_copy_split.s: src/iw_image_op_copy_split.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_copy_split.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_copy_split.c.s
 .PHONY : src/iw_image_op_copy_split.c.s
 
 src/iw_image_op_scale.o: src/iw_image_op_scale.c.o
@@ -696,7 +696,7 @@ src/iw_image_op_scale.o: src/iw_image_op_scale.c.o
 
 # target to build an object file
 src/iw_image_op_scale.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.o
 .PHONY : src/iw_image_op_scale.c.o
 
 src/iw_image_op_scale.i: src/iw_image_op_scale.c.i
@@ -705,7 +705,7 @@ src/iw_image_op_scale.i: src/iw_image_op_scale.c.i
 
 # target to preprocess a source file
 src/iw_image_op_scale.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.i
 .PHONY : src/iw_image_op_scale.c.i
 
 src/iw_image_op_scale.s: src/iw_image_op_scale.c.s
@@ -714,7 +714,7 @@ src/iw_image_op_scale.s: src/iw_image_op_scale.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_scale.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_scale.c.s
 .PHONY : src/iw_image_op_scale.c.s
 
 src/iw_image_op_set.o: src/iw_image_op_set.c.o
@@ -723,7 +723,7 @@ src/iw_image_op_set.o: src/iw_image_op_set.c.o
 
 # target to build an object file
 src/iw_image_op_set.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.o
 .PHONY : src/iw_image_op_set.c.o
 
 src/iw_image_op_set.i: src/iw_image_op_set.c.i
@@ -732,7 +732,7 @@ src/iw_image_op_set.i: src/iw_image_op_set.c.i
 
 # target to preprocess a source file
 src/iw_image_op_set.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.i
 .PHONY : src/iw_image_op_set.c.i
 
 src/iw_image_op_set.s: src/iw_image_op_set.c.s
@@ -741,7 +741,7 @@ src/iw_image_op_set.s: src/iw_image_op_set.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_set.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set.c.s
 .PHONY : src/iw_image_op_set.c.s
 
 src/iw_image_op_set_channel.o: src/iw_image_op_set_channel.c.o
@@ -750,7 +750,7 @@ src/iw_image_op_set_channel.o: src/iw_image_op_set_channel.c.o
 
 # target to build an object file
 src/iw_image_op_set_channel.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.o
 .PHONY : src/iw_image_op_set_channel.c.o
 
 src/iw_image_op_set_channel.i: src/iw_image_op_set_channel.c.i
@@ -759,7 +759,7 @@ src/iw_image_op_set_channel.i: src/iw_image_op_set_channel.c.i
 
 # target to preprocess a source file
 src/iw_image_op_set_channel.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.i
 .PHONY : src/iw_image_op_set_channel.c.i
 
 src/iw_image_op_set_channel.s: src/iw_image_op_set_channel.c.s
@@ -768,7 +768,7 @@ src/iw_image_op_set_channel.s: src/iw_image_op_set_channel.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_set_channel.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_set_channel.c.s
 .PHONY : src/iw_image_op_set_channel.c.s
 
 src/iw_image_op_swap_channels.o: src/iw_image_op_swap_channels.c.o
@@ -777,7 +777,7 @@ src/iw_image_op_swap_channels.o: src/iw_image_op_swap_channels.c.o
 
 # target to build an object file
 src/iw_image_op_swap_channels.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.o
 .PHONY : src/iw_image_op_swap_channels.c.o
 
 src/iw_image_op_swap_channels.i: src/iw_image_op_swap_channels.c.i
@@ -786,7 +786,7 @@ src/iw_image_op_swap_channels.i: src/iw_image_op_swap_channels.c.i
 
 # target to preprocess a source file
 src/iw_image_op_swap_channels.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.i
 .PHONY : src/iw_image_op_swap_channels.c.i
 
 src/iw_image_op_swap_channels.s: src/iw_image_op_swap_channels.c.s
@@ -795,7 +795,7 @@ src/iw_image_op_swap_channels.s: src/iw_image_op_swap_channels.c.s
 
 # target to generate assembly for a file
 src/iw_image_op_swap_channels.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_op_swap_channels.c.s
 .PHONY : src/iw_image_op_swap_channels.c.s
 
 src/iw_image_transform_mirror.o: src/iw_image_transform_mirror.c.o
@@ -804,7 +804,7 @@ src/iw_image_transform_mirror.o: src/iw_image_transform_mirror.c.o
 
 # target to build an object file
 src/iw_image_transform_mirror.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.o
 .PHONY : src/iw_image_transform_mirror.c.o
 
 src/iw_image_transform_mirror.i: src/iw_image_transform_mirror.c.i
@@ -813,7 +813,7 @@ src/iw_image_transform_mirror.i: src/iw_image_transform_mirror.c.i
 
 # target to preprocess a source file
 src/iw_image_transform_mirror.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.i
 .PHONY : src/iw_image_transform_mirror.c.i
 
 src/iw_image_transform_mirror.s: src/iw_image_transform_mirror.c.s
@@ -822,7 +822,7 @@ src/iw_image_transform_mirror.s: src/iw_image_transform_mirror.c.s
 
 # target to generate assembly for a file
 src/iw_image_transform_mirror.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_mirror.c.s
 .PHONY : src/iw_image_transform_mirror.c.s
 
 src/iw_image_transform_resize.o: src/iw_image_transform_resize.c.o
@@ -831,7 +831,7 @@ src/iw_image_transform_resize.o: src/iw_image_transform_resize.c.o
 
 # target to build an object file
 src/iw_image_transform_resize.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.o
 .PHONY : src/iw_image_transform_resize.c.o
 
 src/iw_image_transform_resize.i: src/iw_image_transform_resize.c.i
@@ -840,7 +840,7 @@ src/iw_image_transform_resize.i: src/iw_image_transform_resize.c.i
 
 # target to preprocess a source file
 src/iw_image_transform_resize.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.i
 .PHONY : src/iw_image_transform_resize.c.i
 
 src/iw_image_transform_resize.s: src/iw_image_transform_resize.c.s
@@ -849,7 +849,7 @@ src/iw_image_transform_resize.s: src/iw_image_transform_resize.c.s
 
 # target to generate assembly for a file
 src/iw_image_transform_resize.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_resize.c.s
 .PHONY : src/iw_image_transform_resize.c.s
 
 src/iw_image_transform_rotate.o: src/iw_image_transform_rotate.c.o
@@ -858,7 +858,7 @@ src/iw_image_transform_rotate.o: src/iw_image_transform_rotate.c.o
 
 # target to build an object file
 src/iw_image_transform_rotate.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.o
 .PHONY : src/iw_image_transform_rotate.c.o
 
 src/iw_image_transform_rotate.i: src/iw_image_transform_rotate.c.i
@@ -867,7 +867,7 @@ src/iw_image_transform_rotate.i: src/iw_image_transform_rotate.c.i
 
 # target to preprocess a source file
 src/iw_image_transform_rotate.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.i
 .PHONY : src/iw_image_transform_rotate.c.i
 
 src/iw_image_transform_rotate.s: src/iw_image_transform_rotate.c.s
@@ -876,7 +876,7 @@ src/iw_image_transform_rotate.s: src/iw_image_transform_rotate.c.s
 
 # target to generate assembly for a file
 src/iw_image_transform_rotate.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_rotate.c.s
 .PHONY : src/iw_image_transform_rotate.c.s
 
 src/iw_image_transform_warpaffine.o: src/iw_image_transform_warpaffine.c.o
@@ -885,7 +885,7 @@ src/iw_image_transform_warpaffine.o: src/iw_image_transform_warpaffine.c.o
 
 # target to build an object file
 src/iw_image_transform_warpaffine.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.o
 .PHONY : src/iw_image_transform_warpaffine.c.o
 
 src/iw_image_transform_warpaffine.i: src/iw_image_transform_warpaffine.c.i
@@ -894,7 +894,7 @@ src/iw_image_transform_warpaffine.i: src/iw_image_transform_warpaffine.c.i
 
 # target to preprocess a source file
 src/iw_image_transform_warpaffine.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.i
 .PHONY : src/iw_image_transform_warpaffine.c.i
 
 src/iw_image_transform_warpaffine.s: src/iw_image_transform_warpaffine.c.s
@@ -903,7 +903,7 @@ src/iw_image_transform_warpaffine.s: src/iw_image_transform_warpaffine.c.s
 
 # target to generate assembly for a file
 src/iw_image_transform_warpaffine.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_image_transform_warpaffine.c.s
 .PHONY : src/iw_image_transform_warpaffine.c.s
 
 src/iw_own.o: src/iw_own.c.o
@@ -912,7 +912,7 @@ src/iw_own.o: src/iw_own.c.o
 
 # target to build an object file
 src/iw_own.c.o:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.o
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.o
 .PHONY : src/iw_own.c.o
 
 src/iw_own.i: src/iw_own.c.i
@@ -921,7 +921,7 @@ src/iw_own.i: src/iw_own.c.i
 
 # target to preprocess a source file
 src/iw_own.c.i:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.i
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.i
 .PHONY : src/iw_own.c.i
 
 src/iw_own.s: src/iw_own.c.s
@@ -930,7 +930,7 @@ src/iw_own.s: src/iw_own.c.s
 
 # target to generate assembly for a file
 src/iw_own.c.s:
-	cd /home/opencv-master/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.s
+	cd /home/opencv-3.4.2/build && $(MAKE) -f 3rdparty/ippiw/CMakeFiles/ippiw.dir/build.make 3rdparty/ippiw/CMakeFiles/ippiw.dir/src/iw_own.c.s
 .PHONY : src/iw_own.c.s
 
 # Help Target
@@ -1041,6 +1041,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/opencv-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/opencv-3.4.2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
